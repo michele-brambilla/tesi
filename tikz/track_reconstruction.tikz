@@ -1,0 +1,58 @@
+\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid,every text node part/.style={align=center}]
+  
+% % track
+\begin{scope}
+ \draw[dashdotted] (-2,1) -- (18,5) node[right] {particle\\track};
+\end{scope}
+
+ % projection
+\begin{scope}[ yshift=-20, xslant=2]
+  \draw[,domain=-2:14,variable=\x,red] plot ({\x},{0.5+2.0/15.0*\x})  node[right,black] {track\\projection};
+\end{scope}
+
+% modules
+\begin{scope}[ yslant=0., yslant=0.5]
+ \draw[draw=none,fill=white] (0,0) rectangle ({2*.5+.25},5);
+\draw (0,0) -- (0,5) -- (5,5) -- (5,0) -- (0,0);
+\foreach \i in {0,1,...,9}
+\draw ({.5*\i},0) -- ( {.5*\i},5) ;
+\end{scope}
+
+\begin{scope}[ xshift = 170, yslant=0.5]
+ \draw[draw=none,fill=white] (0,0) rectangle ({5*.5+.25},5);
+  \draw (0,0) -- (0,5) -- (5,5) -- (5,0) -- (0,0);
+  \foreach \i in {0,1,...,9}
+  \draw ({.5*\i},0) -- ( {.5*\i},5) ;
+\end{scope}
+
+\begin{scope}[ xshift = 340, yslant=0.5]
+  \draw[draw=none,fill=white] (0,0) rectangle ({8*.5+.25},5);
+  \draw (0,0) -- (0,5) -- (5,5) -- (5,0) -- (0,0);
+  \foreach \i in {0,1,...,9}
+  \draw ({.5*\i},0) -- ( {.5*\i},5) ;
+\end{scope}
+
+
+\begin{scope}[ yshift=-20, xslant=2]
+    \fill [blue] (0,{2*.25}) rectangle (.5,{(2+1)*.25}) node [below right, black] {$x_1$};
+    \draw (0,0) -- (.5,0) -- (.5,2.5) -- (0,2.5) -- (0,0);
+    \foreach \i in {1,...,9}
+    \draw (0,{.25*\i},0) -- (0.5,{.25*\i}) ;
+  \end{scope}
+
+ \begin{scope}[ xshift = 170, yshift=-20, xslant=2]
+    \fill [blue] (0,{5*.25}) rectangle (.5,{(5+1)*.25}) node [below right, black] {$x_2$};
+   \draw (0,0) -- (.5,0) -- (.5,2.5) -- (0,2.5) -- (0,0);
+   \foreach \i in {1,...,9}
+   \draw (0,{.25*\i},0) -- (0.5,{.25*\i}) ;
+ \end{scope}
+
+ \begin{scope}[ xshift = 340, yshift=-20, xslant=2]
+    \fill [blue] (0,{8*.25}) rectangle (.5,{(8+1)*.25}) node [below right, black] {$x_3$};
+   \draw (0,0) -- (.5,0) -- (.5,2.5) -- (0,2.5) -- (0,0);
+   \foreach \i in {1,...,9}
+   \draw (0,{.25*\i},0) -- (0.5,{.25*\i}) ;
+ \end{scope}
+
+
+\end{tikzpicture}

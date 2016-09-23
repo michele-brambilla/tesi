@@ -1,0 +1,64 @@
+\begin{tikzpicture}[scale=.4,every node/.style={minimum size=1cm},on grid,every
+  text node part/.style={align=center}, declare function={ track(\x) = 1.+3.0/7.5*\x; }]
+
+  % original, misaligned
+  \def \a {0}
+  \def \b {.8}
+  \def \c {-.8}
+
+  \begin{scope}
+    % axis
+    \draw[->] (-1,-1) -- (11,-1) node[right] {z};
+    \draw[->] (0,-2) -- (0,7) node[above] {x};
+
+    % track
+    \draw[,domain=-.5:10,variable=\x,red] plot ({\x}, {track(\x)} );
+
+    % m1
+    \draw[dashed] (2.25,-1) -- (2.25,1) node[below=1] {$z_1$};
+    \fill[blue] (2,{track(2)+\a}) rectangle (2.5,{track(2.5) +\a});
+    \draw[dotted] (0,1) -- (2,1);
+    \draw[thick] (2,{1 +\a}) rectangle (2.5,{5 +\a})  node[above] {$M_1$};
+    
+    % m2
+    \draw[dashed] (5.25,-1) -- (5.25,{1+\b}) node[below=1.3] {$z_2$};
+    \fill[blue]  (5,{track(5) +\b}) rectangle (5.5,{track(5.5) +\b});
+    \draw[dotted] (0,{1+\b}) -- (5,{1+\b});
+    \draw[thick] (5,{1 +\b})          rectangle (5.5,{5 +\b})  node[above] {$M_2$};
+    
+    % m3
+    \draw[dashed] (8.25,-1) -- (8.25,{1+\c}) node[below=.75] {$z_3$};
+    \fill[blue]  (8,{track(8) +\c}) rectangle (8.5,{track(8.5) +\c});
+    \draw[dotted] (0,{1+\c}) -- (8,{1+\c});
+    \draw[thick] (8,{1 +\c})          rectangle (8.5,{5 +\c})  node[above] {$M_3$};
+  \end{scope}
+
+  % original, aligned
+  \begin{scope} [xshift = 520]
+    % axis
+    \draw[->] (-1,-1) -- (11,-1) node[right] {z};
+    \draw[->] (0,-2) -- (0,7) node[above] {x};
+
+    % track
+    \draw[,domain=-.5:10,variable=\x,red] plot ({\x}, {track(\x)} );
+
+    % m1
+    \draw[dashed] (2.25,-1) -- (2.25,1) node[below=1] {$z_1$};
+
+    \fill[blue] (2,{track(2)}) rectangle (2.5,{track(2.5)});
+    \draw[thick] (2,1) rectangle (2.5,5)  node[above] {$M_1$};
+    
+    % m2
+    \draw[dashed] (5.25,-1) -- (5.25,1) node[below=1] {$z_2$};
+    \fill[blue]  (5,{track(5)}) rectangle (5.5,{track(5.5)});
+    \draw[thick] (5,1)          rectangle (5.5,5)  node[above] {$M_2$};
+    
+    % m3
+    \draw[dashed] (8.25,-1) -- (8.25,1) node[below=1] {$z_3$};
+    \fill[blue]  (8,{track(8)}) rectangle (8.5,{track(8.5)});
+    \draw[dotted] (0,{1}) -- (8,{1});
+    \draw[thick] (8,1)          rectangle (8.5,5)  node[above] {$M_3$};
+  \end{scope}
+
+  
+\end{tikzpicture}

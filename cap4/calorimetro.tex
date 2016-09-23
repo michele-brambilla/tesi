@@ -1,0 +1,78 @@
+
+\chapter{Multitrack events with calorimeters}
+\label{cap:multitraccia}
+
+\begin{itemize}
+\item scopo (breve) e informazioni sui dati
+\item descrizione del calorimetro
+\item quali passaggi dei precenti abbiamo fatto
+\item allineamento e risoluzione
+\item tracking eventi singoli
+\item multitracking (simulato e reale)
+\item risultati
+\end{itemize}
+
+
+Reconstructed tracks have been compared with the outcome of an array of
+3$\times$3 SiPM connected to a shashlik electromagnetic calorimeter. Goal of the
+activity is to correlate and improve reconstructed hit position with the
+calorimeter signal. Before proceeding I will remark some features of
+electromagnetic calorimeters that has to be taken into account when analysing
+data.\\
+When passing trough matter electrons can loose energy because of many different
+kind of interaction, nevertheless two main regimes can be identified. At low
+energies, below $\sim$10 MeV the energy loss is main due to collision with atoms
+and molecules of the material through ionisation and thermal excitation. At
+medium energies, $\sim$10 MeV to 1~GeV the main couse of energy loss is
+bremsstrahlung. As a consequence electrons of sufficiently high energy
+($\geq$1~GeV) incident on a block of material produces secondary photons that can
+be in turn converted into an electron-antielectron pair. If these secondary
+particles have enough energy the process can continue and give rise to an
+electromagnetic cascade. The number or produced particles increase until when
+their energy falls below a critical energy 
+\begin{equation}\label{eq:critical_energy}
+\epsilon \simeq \frac{610 {\rm MeV}}{Z + 1.24}
+\end{equation}
+thereafter the energy is
+released in form of ionisation and excitement.\\
+The main features of the electromagnetic shower can be described as a function
+of the {\em radiation length} $X_0$, which is characteristic of the material
+\cite{pdg}:
+\begin{equation}\label{eq:radiation_length}
+X_0 \simeq \frac{716 {\rm g\ cm^{-2}}A}{Z(Z+1)\log{287/\sqrt{Z}}}
+\end{equation}
+where $A$ is the atomic weight and $Z$ the atomic number. The radiation length
+represents the depth in the material at which the electron reduce it energy by a
+factor $1/e$:
+\begin{equation}\label{eq:radiation_length}
+\langle E(x) \rangle = E_0 e^{-\frac{x}{X_0}}
+\end{equation}
+The radiation length and the critical energy can be used to estimate the depth
+at which the maximum number of secondary particles is produced:
+\begin{equation}\label{eq:shower_max}
+t_{\rm max} \simeq \log{\frac{E_0}{\epsilon}} - 0.5
+\end{equation}
+where $t_{\rm max}$ is measured in radiation lengths and $E_0$ is the incident
+particle energy. The calorimeter thickness containing 95\% of the shower energy
+is approximately given by
+\begin{equation}\label{eq:95tickness}
+t_{95\%} \simeq t_{\rm max}+0.08Z+9.6
+\end{equation}
+$t_{95\%}$ and $t_{\rm max}$ being expressed in radiation lengths.\\
+The electromagnetic shower has a transversal spread due to multiple scattering
+away from the shower axis and photon bremsstrahlung. A measurement of the
+transverse size of the shower at the critical energy is given by the Moli\`ere radius
+\begin{equation}\label{eq:moliere_radius}
+R_{\rm M} \simeq 21 {\rm MeV} \frac{X_0}{\epsilon}
+\end{equation}
+Approximately only the 10\% of the shower energy falls outside the cylinder of
+radius $\sim 1 R_{\rm M} $
+
+
+{ \color{red}
+%Tracking insede the caloriemters will be done with Si-trackers covering large
+%areas with hundreds of channels
+
+
+}
+

@@ -1,0 +1,66 @@
+
+\begin{tikzpicture}[scale=.2%,every node/.style={minimum size=1cm},on grid,every
+%  text node part/.style={align=center}
+]
+
+  \begin{scope}
+
+    \def \pitch {50}
+    \def \x {25}
+    \def \y {5}
+
+    \def \hit {12.5}
+
+    \def \stripH {35}
+    \def \phL {4}
+    \def \phR {16}
+
+    % normalization: wanted area = \sqrt{400*pi} * f -> f = 10*40 /\sqrt{400*pi}
+    \def \norm {11.3}
+    \def\normaltwo{\x,{\norm * exp((-(\x-\hit)^2)/400)-15}}
+
+
+%    \draw[step=10.0,very thin,gray] (-50,-50) grid (50,50);
+    
+    % axis
+    \draw[->] (-50,0) -- (50,0);
+    \draw[->] (\hit,-20) -- +(0,25) node[star, star points=9, star point ratio=2.25, draw,fill=yellow,scale=0.5] {} -- +(0,70)  node[below left] {TRACK};
+    
+   % left strip
+   \draw [thick] ({-5-\x},\y) -- +(0,\stripH);
+   \draw [thick] ({5-\x},\y) -- +(0,\stripH);
+   \draw [red,dashed] (-\x,\y) -- +(0,{\stripH +5});
+   % ph left
+   \draw [red,thick] ({-\x -10},{\stripH +10})  -- +(5,0) -- +(5,\phL) --
+   +(15,\phL) node[black,above] {$PH_{left} \simeq 1/5$} -- +(15,0) -- +(20,0);
+
+
+   % right strip
+  \draw [thick] ({-5+\x},\y) -- +(0,\stripH);
+  \draw [thick] ({5+\x},\y) -- +(0,\stripH);
+  \draw [red,dashed] (\x,\y) -- +(0,{\stripH +5});
+   % ph right
+   \draw [red,thick] ({\x -10},{\stripH +10})  -- +(5,0) -- +(5,\phR) --
+   +(15,\phR) node[black,above] {$PH_{right} \simeq 4/5 $} -- +(15,0) -- +(20,0);
+
+%    % midline
+   \draw[dotted,thick] (0,-20) -- +(0,50);
+
+
+%    charge
+    \draw[smooth,color=blue,domain=-50:50] plot (\normaltwo) node[right] {};
+
+    \fill [pattern=north west lines, pattern color=blue] (0,-15) -- plot[domain=0:50] (\normaltwo) -- cycle;
+
+   % pitch
+   \draw [<-,>=stealth] (-\x,15) -- (0,15) node [above,midway] {$p$};
+   \draw [->,>=stealth] (0,15) -- (\x,15);
+
+   % hit
+   \draw [<->,>=stealth] (-\x,10) -- (\hit,10) node [below,midway] {$x = 3/4 p$};
+
+
+  \end{scope}
+  
+
+\end{tikzpicture}

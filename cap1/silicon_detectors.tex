@@ -1,0 +1,1788 @@
+\chapter{Silicon detectors, the role of tracking in particle physics
+  measurements}
+
+
+Elementary particles addresses the question ``What is matter made of?''. It's a
+remarkable fact that matter at the subatomic levels consists of tiny objects
+(electrons, protons, neutrons, neutrinos and so on), with vast empty spaces in
+between. Even more impressive, by the early 1930s known matter consisted of only
+three particle: electrons, neutrons and protons. To these one must add two
+massless particles: the photon $\gamma$\footnote{The photon was postulated by
+  Planck in 1900 to explain black-body radiation, where the classical
+  description of electromagnetic radiation led to results incompatible with
+  experiments.} and the neutrino $\nu$\footnote{The neutrino was postulated by
+  Pauli in 1930 to explain the apparent non conservation
+  of energy observed in the decay products of some unstable nuclei.}.\\
+% Almost all particles are {\it unstable}, i.e. they suddenly decay into
+% different particles in a chain that ends in a stable one (It is worth to
+% notice that neutron are not stable particles. Nevertheless their lifetime of
+% $10^{}$~s is larger than the age of the universe).
+The 1950s saw technological developments that enabled high-energy beams of
+particles to be produced in laboratories. As a consequence, a wide range of
+controlled scattering experiments could be performed and by the 1960s this
+resulted in the discovery of a large number of unstable particles with very
+short lifetimes. An urgent need for a theory that could make sense of all these
+states arose. An answer emerged in the mid 1960s in the form of the so-called
+{\it quark model}, first suggested by Gell-Mann who postulated that the new
+particles were bound states of three families of more fundamental
+physical particles, the {\it quarks}.\\
+The best theory of elementary particles we have at present is called {\it
+  standard model}. Its goal is to explain all the phenomena of particle physics,
+except those due to gravity, in terms of the
+properties and interactions of a small number of elementary particles.\\
+A huge part of elementary particles physics is known as high-energy
+physics. There are various reasons for this name:
+\begin{itemize}
+\item to produce new particles in a collision between two other particles
+  energies are needed at least as great as the rest masses of the particles
+  produced;
+\item to explore the structure of a particle requires a probe whose wavelength
+  $\lambda$ is smaller than the structure to be explored.  At large wavelengths
+  one can only expect to resolve relatively large structures and in order to
+  examine something extremely small, comparably short wavelengths and hence high
+  momenta are required.
+\end{itemize}
+% If you want to study the interaction at very short range, you need very
+% energetic particles.
+In fact, a particle of momentum $p$ has an associated wavelength $\lambda$ given
+by the De Broglie equation:
+\begin{equation}
+  \label{eqn:planck}
+  \lambda=\frac{h}{p} ,
+\end{equation}
+where $h$ is Planck's constant~\cite{Griffiths}. Such equation predicts the {\it
+  de Broglie wavelength $\lambda$} of a {\it matter wave} associated
+with the motion of a material particle having a momentum $p$.\\
+In order to give an idea of quantities, exploring the internal structure of the
+proton using electrons requires wavelengths that are much smaller than the
+classical radius of the proton ($\sim 10^{-15}$~m). This in turn requires
+electron energies that are greater than $10^3$ times the rest energy of the
+electron, implying electron velocities very close to the speed of
+light.\footnote{What is the de Broglie wavelength of a tennis ball moving at a
+  speed of $210.8$~km/h? The fastest recorded serve in the history of women's
+  tennis was established by German player Sabine Lisicki. Lisicki's blistering
+  serve came in July 2014 during a first round match at the Bank of the West
+  Classic in Stanford (USA). Lisicki's achievement broke the previous record set
+  by American tennis star Venus Williams, who clocked a $207.6$~km/h serve at
+  the US Open in August 2007. Assuming that tennis balls must have masses
+  between $56.0$ to $59.4$~g, the corresponding
+  wavelength is in the range of $2.06 \cdot 10^{-34} - 1.95 \cdot 10^{-34}$~m.}\\
+The majority of experiments are conducted using beams of particles produced by
+machines called accelerators. This has the great advantage that the projectiles
+are of a single type, and have energies that may be controlled by the
+experimenter. Details of the particles produced in the collision are deduced by
+observing their interactions with the material of detectors, which are placed in
+the vicinity of the interaction region. There are many kind of particle
+detectors able to track the particles, they are assembled in a variety of types
+and sizes but nowadays most are huge and multi-layered. Tracking detectors have
+evolved from bubble chambers to gaseous and solid-state electronic
+detectors~\cite{Strandlie}. Despite their differences, they all rely on the same
+basic principles. They do not make the tracks of particles directly visible but
+produce tiny electrical signals that can be recorded and computed. In fact,
+there is one thing to be aware of: when high-energy charged particles pass
+through matter they ionise atoms along their path. But electrically neutral
+particles do not cause ionisation, and they leave no tracks. Even though the
+neutral particles are ``invisible'' their paths could be reconstructed by
+analysing the tracks of the charged particles and
+invoking conservation of energy and momentum at each vertex.\\
+The detectors employed in high energy physics experiments record the position,
+arrival time and identify particles. The precise evaluation of position
+coordinates is required in order to determine the particle's trajectory and its
+momentum from the deflection in a magnetic field. No single detector is in
+general able to meet all requirements and in modern experiments a combination of
+detectors of different types is required in a single experiment.
+
+
+\section{Why tracking}
+\label{sec:caratteristiche_si}
+
+Tracking is concerned with the reconstruction of charged particles trajectory
+tracks in experimental particle physics.
+% In such kind of experiments everything interesting happens in the first
+% $\sim$10$^{-12}$ seconds after the beams collide.
+In such kind of experiments we can only see final-state particles: our physics
+knowledge is based on working backwards in time to infer what actually happened
+in the initial collision. The more accurate final-state particles are measured,
+the more precisely we can determine the parameter of their parents.
+% Nevertheless we can only see ``final-state'' particles, and our physics
+% knowledge is based on ``working backwards in time'' to infer what actually
+% happened in the initial collision: the more accurate final-state particles are
+% measured, the more precisely we can determine the parameter of their parents.
+\\
+Track fitting and the treatment of multiple scattering have had a long tradition
+in high resolution cosmic ray and bubble chamber experiments since 1940. With
+the emerging of detectors with good and well-defined precision, track and vertex
+fitting with attention to multiple scattering were successful applied in the
+early 1970s~\cite{Fruhwith}.
+\\
+Among the different quantities that can be obtained with track reconstruction,
+it is worth to mention vertices of production and decay positions, momentum
+resolution and decay length.
+
+
+\subsection{Production and decay position}\label{Production and decay position}
+
+% {\color{red} Vertexing:
+% \begin{itemize}
+% \item distinguish primary vertices;
+% \item measure impact parameter and secondary vertices, lifetime tagging.
+% \end{itemize}
+% }
+Reconstructed tracks, in particular their extrapolations to the region close to
+the beam line, are used to search for evidence of the production of particles
+with lifetimes of order of picoseconds.
+% such as hadrons with heavy-quark content.
+A striking example are heavy quark hadrons. The finite lifetime of
+B-hadrons\footnote{Hadrons are the heaviest particles and they are subject to
+  the strong nuclear force. They are not fundamental particles as they are made
+  up of quarks.} introduces a unique ability to identify jets originating from
+b-quarks, so called {\it heavy flavor} jets. A typical beam pipe radius in a
+collider experiment is at least 4~cm while a B-hadron produced with an energy of
+35 GeV after fragmentation will have a decay length of 2-3~mm, well within the
+beam pipe~\cite{Tully}. Therefore the tracking detector must extrapolate the
+charged particle trajectories back into the vacuum region of the beam pipe to
+the determine their point of origin.
+\\
+One of the most important measurements of the tracking system is the {\it
+  primary vertex} location; an example of track and vertex reconstruction is
+displayed in \fig{Moll_1}.
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.9\textwidth]{cap1/primary_vertex_a.jpg}
+  \caption{\textit{Physics example from LHCb (2010), with primary and secondary
+      vertex:\quad $B^{+} \to J/\Psi\quad K^{+}$~\cite{Moll}.}}\label{Moll_1}
+\end{figure}
+In particle physics the primary vertex is the interaction point where particles
+belonging to the two beams collide.  In general, the main interaction produces
+short-lived resonances, such as heavy flavor hadrons and the $\tau$ lepton. The
+decay of these resonances originate the so called {\it secondary vertices}.
+Secondary vertices need to be tagged mainly to identify heavy quarks and the
+$\tau$ lepton to e.g. measure lifetime but equally important is to reduce
+background. Track reconstruction must be precise enough to extrapolate back into
+the interaction region, resolving primary, secondary and tertiary vertices. An
+example of track and vertex reconstruction can be seen in \fig{Hebbeker_1},
+where the decay of a strange beauty particle (Bs ) in the \gls{lhcb} experiment
+is displayed.
+\begin{figure}[!htbp]
+  \centering\includegraphics[height=0.4\textwidth]{cap1/tertiary_vertex.jpg}
+  \caption{\textit{Physics example from LHCb (2010). In the case of heavy flavor
+      production there are multiple vertices in the event: the first set of
+      vertices is a collection of charged tracks produced promptly from strong
+      interaction decay; the second set are secondary and tertiary vertices
+      produced from the short-living particles produced by the main
+      collision. PV, SV and TV are respectively the primary, the secondary and
+      the tertiary vertex~\cite{Hebbeker}.}}\label{Hebbeker_1}
+\end{figure}
+A typical measurement of the sensitivity for detecting secondary vertices is the
+{\it resolution} $\sigma_0$ of the miss distance or {\it impact parameter} $d_0$
+of a track to the primary vertex (\fig{Wells_1}).
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.6\textwidth]{cap1/primary_vertex_b.jpg}
+  \caption{\textit{Tracks have significant impact parameter $d_0$ and maybe form
+      a reconstructed secondary vertex.}~\cite{Wells}.}\label{Wells_1}
+\end{figure}
+% If the measured impact parameter (IP) is significantly larger
+The impact parameter $d_0$ is defined as the shortest distance between a
+reconstructed track and the primary vertex and it is a crucial quality parameter
+of the full detector performance. If $d_0$ is significantly larger (remember
+that the track does not pass through the primary vertex) than the experimental
+resolution in this quantity, a
+secondary decay vertex is probably present.\\
+The value $d_0$ is dependent on the detector geometry and strongly on multiple
+scattering, hence the material budget obstructing the flight path. For a
+simplified two layer system, the variance $\sigma$ of $d_0$ can be expressed
+by~\cite{Hartmann}
+\begin{equation}\label{sigma_d0}
+  \sigma_{d_0}^2 = \sigma_{MS}^2 + \sigma_{geom}^2.
+\end{equation}
+
+In equation~\ref{sigma_d0} the first term is given by
+\begin{equation}
+  \sigma_{MS}^2 = \sum_{j=1}^{n_{\rm scatt}}(R_{j}\Delta\Theta_{j})^2
+\end{equation}
+where
+$\Delta\Theta_{j}\simeq{\rm (0.0136/p_{\perp}^{\rm beam})[GeV/c]\sqrt{{\Delta
+      X}/{X_{0}}}[1+0.038 \cdot \ln({\Delta X_{j}}/{X_{0}})]}$
+is the average multiple scattering angle of a particle with momentum
+$p_{\perp}^{beam}$ traversing through the material of thickness $\Delta X_{j}$,
+expressed in fractions of a radiation length $X_{0}$ \footnote{The amount of
+  matter traversed by interactions is called the radiation length $X_0$, usually
+  measured in g$\cdot$cm$^2$. It is both the mean distance over which a
+  high-energy electron loses all but $1/e$ of its energy by bremsstrahlung, and
+  $7/9$ of the mean
+  free path for pair production by a high-energy photon.\\
+  It is also the appropriate scale length for describing high energy
+  electromagnetic cascades. It is given by the approximated formula:
+  $X_{0}=\frac{716.4~g\cdot \rm{cm}^{-2} A}{Z(Z+1)\ln (287/\sqrt{Z})}$, where A
+  and Z are the average atomic mass and proton number.}; ${\rm Rj}$ is the
+radius; ${\rm n_{scatt}}$ is the number of layers in front of the last detection
+element.
+
+The second term of the \eq{sigma_d0} is given by
+\begin{equation}
+  \sigma_{geom}^2 = (\frac{\sigma_{1}r_{2}}{r_{2}-r_{1}})^2 + (\frac{\sigma_{2}r_{2}}{r_{2}-r_{1}})^2 
+\end{equation}
+where $\sigma_{1}$ and $\sigma_{2}$ are the intrinsic resolution in the
+measurement layers and $r_{1}$ and $r_{2}$ are the distances from
+the production point.\\
+The impact parameter resolution is often parametrised by
+$\sigma_{d_0}^2 =\sigma_{asympt}^2 + (\sigma_{MS}/p_{\perp})^2$ with
+$\rm p_{\perp}$ in GeV/c.
+
+All the above considerations lead to the following design goals:
+\begin{itemize}
+\item low mass for beam pipe and vertex detector, including cables and support
+  structures to minimise Coulomb Scattering. This priority is especially high in
+  front of the very first measurement layer where keeping $\Delta X_{j}/X_{0}$
+  and $\Theta_{j}$ small results in a small $\sigma_{MS}$;
+\item placement of the first detection layer as close as possible to the primary
+  interaction point to minimise extrapolation error, thus maximising impact
+  parameter resolution: $r_{1}$ small;
+\item largest possible radius for the outer measurement layer: $r_{2}$ large;
+\item high intrinsic detector resolution,thus silicon sensors with small pitch
+  and analog readout for hit interpolation in between strips: $\sigma_{1}$ and
+  $\sigma_{2}$ small;
+\item take alignment into account from the very beginning, thus overlap sensors
+  to allow extrapolation of exact position with tracks crossing overlapped
+  modules;
+\item establish good algorithms for alignment, pattern recognition and vertex
+  identification in the early stage.
+\end{itemize}
+
+
+The requirements for detectors to resolve secondary vertices from the decay of
+short living particles are as follows:
+\begin{itemize}
+\item very good spatial resolution (better than 10~$\mu$m);
+\item very good two particle separation, since they operate close to the
+  interaction point;
+\item high rate capability, about 10$^{6}$~Hz.
+\end{itemize}
+
+
+
+
+
+\noindent
+
+
+
+
+
+
+
+\subsection{Momentum measurement}
+
+In high energy physics it is important to determine the momentum of a charged
+particle. The most common way to achieve this is to deflect it with a magnetic
+field and to measure the deflection by position-sensitive detectors. Such a
+device like the one in \fig{spectrometer} is called a ``{\it magnetic particle
+  spectrometer}''. Particles of known identity and also, in general, of known
+energy are incident on a target thereby producing secondary particles in an
+interaction. The purpose of the spectrometer is to measure the momenta of the
+charged secondary particles.
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.9\textwidth]{cap1/spectometer.jpg}
+  \caption{\textit{Schematic representation of a magnetic spectrometer in a
+      fixed-target experiment with a stationary target: use layers of position
+      sensitive detectors before and after (or inside) a magnetic field to
+      measure the trajectories and to determine the bending radius
+      ~\cite{Grupen}.}}\label{spectrometer}
+\end{figure}\\
+% The determination of the momentum of charged particles can be performed by
+% measuring the bending of a particle trajectory in a magnetic field
+The motion of a charged particle in a static magnetic field $\vec{B}$ must
+satisfy the equations of motion given by the Lorentz force:
+$\vec{F}=q(\vec{E}+\vec{v}\times\vec{B})$. In the following we will assume that
+there is no electric field $\vec{E}$ (\fig{campoB_a}). Neglecting bremsstrahlung
+and material effects, this force $\vec{F}$ is derived from Maxwell's equations
+to be ~\cite{Fruhwith}:
+
+\begin{equation}
+  \vec{F}=\frac{d\vec{p}}{dt}=q\vec{v}\times\vec{B}
+\end{equation}
+where $\vec{v}$ is the particle speed, $q$ is the signed charge and $\vec{B}$
+the magnetic field.  The Lorentz force causes the particles to follow circular
+or helical trajectories around the direction of the magnetic field
+(\fig{campoB_b}).
+\begin{figure}
+  \centering \subfloat[\emph{Lorentz force}\label{campoB_a}]
+  {\includegraphics[height=0.2\textheight]{cap1/campoB_mano.jpg}}
+  % \subfloat{(b)}\emph{Trajectory}}
+  \subfloat[\emph{Trajectory}\label{campoB_b}]
+  {\includegraphics[height=0.2\textheight]{cap1/campoB.jpg}} \\
+  \caption{\textit{(a) The Lorentz force is the force acting on a point charge
+      due to electromagnetic field. The verse of the force is determined by the
+      sign of the charge. (b) The trajectory of a particle with a positive or
+      negative charge $q$ is under the influence of the magnetic field, with is
+      directed perpendicularly out of the screen~\cite{Garutti}.}}\label{campoB}
+\end{figure}
+The bending radius of particle tracks is related to the magnetic field strength
+and the momentum component of the particle
+perpendicular to the magnetic field.\\
+Since magnetic forces do not change the energy of the particle we can rewrite
+the former as
+\begin{eqnarray}\label{gamma}
+  m_{0}\gamma\frac{d\vec{v}}{dt}&=&q\vec{v}\times\vec{B} \nonumber\\
+  m_{0}\gamma\frac{d^{2}\vec{r}}{dt^{2}}&=&q\frac{d\vec{r}}{dt}\times\vec{B}
+\end{eqnarray}
+where $m_{0}$ is the rest mass, $\vec{r}$ is the position in the space of the
+particle and $t$ is the time in the laboratory frame. The relativistic Lorentz
+factor $\gamma$ is given by
+\begin{equation}
+  \gamma =\frac{1}{1-\beta^2}
+\end{equation}
+where $\beta=|\vec \beta|=v/c$ ($v$ is the particle speed and $c$ the speed of
+light) and $\vec \beta=\vec v/c=d\vec r/d(ct)$. \eq{gamma} can be rewritten in
+terms of geometrical quantities only:
+\begin{equation}
+  m_{0}\gamma v\frac{d^{2}\vec{r}}{ds^{2}}=q\frac{d\vec{r}}{ds}\times\vec{B}
+\end{equation}
+where $r=r(s)$ and $s(t)$ is the path length (distance along trajectory), with
+$ds/dt=v$. Finally, given the momentum of the particle
+$p= |\vec{p}|= m\gamma\beta c$,
+\begin{equation}\label{Lorentz_trajectory}
+  \frac{d^{2}\vec{r}}{ds^{2}}=\frac{q}{p}\frac{d\vec{r}}{ds}\times\vec{B}
+\end{equation}
+\\
+In case of inhomogeneous magnetic field, $B(s)$ varies along the track and to
+find the trajectory $r(s)$ one has to solve a differential
+equation.\\
+In the special case of homogeneous magnetic field (chosen to be parallel to the
+z axis) \eq{Lorentz_trajectory} takes the form
+% \begin{eqnarray}
+%  {\rm d}^{2}x/{\rm d}s^{2}&=&(q/p)({\rm d}y/{\rm d}s)B \nonumber\\
+%  {\rm d}^{2}y/{\rm d}s^{2}&=&-(q/p)({\rm d}x/{\rm d}s)B \\
+%  {\rm d}^{2}z/{\rm d}s^{2}&=&0 \nonumber
+%\end{eqnarray}
+\begin{equation}
+  % \[
+  \left\{
+    \begin{array}{rcl}
+      {\rm d}^{2}x/{\rm d}s^{2}&=&(q/p)({\rm d}y/{\rm d}s)B \\
+      {\rm d}^{2}y/{\rm d}s^{2}&=&-(q/p)({\rm d}x/{\rm d}s)B \\
+      {\rm d}^{2}z/{\rm d}s^{2}&=&0
+    \end{array}
+  \right.
+  % \]
+\end{equation}
+and the trajectories is given an helix with an axis parallel to z (see
+\fig{helix_a}). The helix is described in the parametric form
+\begin{equation}
+  \left\{
+    \begin{array}{rcl}
+      x(s)&=&x_0+R[\cos(\Phi_0+hs\cos\lambda/R)-\cos\Phi_0] \\
+      y(s)&=&y_0+R[\sin(\Phi_0+hs\cos\lambda/R)-\sin\Phi_0] \\
+      z(s)&=&z_0+s\sin\lambda 
+    \end{array}
+  \right.
+\end{equation}
+where $\vec{x}_{0}$ is the starting point at $s_{0}=0$, $\lambda=\arcsin(dz/ds)$
+is the {\it dip} (slope) angle $R=(p\cos\lambda)/(|qB|)$ is the radius of the
+helix, $h=\pm 1$ is the sense of rotation on the helix, $\Phi_{0}$ is the
+azimuth angle of the starting point with respect to the helix axis. The
+projection of the helix on the x-y plane is a circle (\fig{helix_c}):
+\begin{equation}
+  (x-x_0+R\cos\Phi_0)^2+(y-y_0+R\sin\Phi_0)^2=R^2
+\end{equation}
+\begin{figure}
+  \centering \subfloat[\label{helix_a}]
+  {\includegraphics[height=0.2\textheight]{cap1/helix_a.jpg}}
+  \subfloat[\label{helix_c}]
+  {\includegraphics[height=0.2\textheight]{cap1/helix_circle.jpg}} \\
+  \caption{\textit{~\subref{helix_a} For homogeneous B (solenoidal field) the
+      trajectory is given by an helix.~\subref{helix_c} The projection of the
+      helix in the transverse x-y plane is a
+      circle~\cite{Ragusa}.}}\label{helix}
+\end{figure}
+
+In hadronic colliders one wants to measure mainly the transverse momentum, since
+elementary processes happens between partons, that are not at rest in the
+laboratory frame. The procedure is the following:
+\begin{itemize}
+\item the momentum of the particle is projected along two directions
+  (~\fig{momentum_measurement_a});
+\item in the $\rho-\phi$ plane one measures the transverse momentum of the
+  particle (~\fig{momentum_measurement_b});
+\item in the $\rho-z$ plane one measures the dip angle $\lambda$
+  (~\fig{momentum_measurement_c}).
+\end{itemize}
+\begin{figure}
+  \centering \subfloat[\label{momentum_measurement_a}]
+  {\includegraphics[width=0.3\textwidth]{cap1/momentum_measurement_a.jpg}}
+  \subfloat[\label{momentum_measurement_b}]
+  {\includegraphics[width=0.3\textwidth]{cap1/momentum_measurement_b.jpg}}
+  \subfloat[\label{momentum_measurement_c}]
+  {\includegraphics[width=0.3\textwidth]{cap1/momentum_measurement_c.jpg}}
+  \caption{\textit{~\subref{momentum_measurement_a} Momentum of the particle
+      measured in the bending plane $\rho-\phi$
+      and~\subref{momentum_measurement_b} dip angle in the $\rho-z$ plane,
+      where~\subref{momentum_measurement_c}
+      $p_{\perp}=p\cos \lambda$~\cite{Ragusa}.}}\label{momentum_measurement}
+\end{figure}
+Once we have measured the transverse momentum and the dip angle the total
+momentum is
+\begin{equation}\label{total_momentum}
+  p=\frac{p_{\perp}}{\cos \lambda}\simeq \frac{0.3BR}{\cos \lambda}
+\end{equation}
+where the last equality comes from the speed of light $c=2.99793\times 10^8$m/s,
+the magnetic field $B$ is in tesla [T] and
+$p$ in GeV/c.\\
+If the momentum of the particle is high enough the trajectory is not a closed
+circle but the particle is simply deflected as sketched in
+\fig{sagitta_c}. Being the magnetic field oriented along the z
+axis, the deflection of the particles is in the x-y plane.\\
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.5\textwidth]{cap1/sagitta_c.jpg}
+  \caption{\textit{Trajectory of a charged particle in a plane perpendicular to
+      a magnet~\cite{Grupen}.}}\label{sagitta_c}
+\end{figure}
+Since the magnetic field $B$ can be very precisely set as an external parameter
+in order to determine the total momentum of the particle we only need to measure
+the bending radius $R$ and the dip angle $\lambda$.  Because of this the error
+on the momentum is easily calculated
+\begin{eqnarray}\label{res_p}
+  % {\diff}{\mathop{}\!d} {\diff}{\mathop{}\!\mathrm{d}}
+  \frac{\partial p}{\partial R}&=&\frac{p_{\perp}}{R}\nonumber\\
+  \frac{\partial p}{\partial \lambda}&=&{p}\cdot\tan \lambda\nonumber\\
+  \Bigl(\frac{\Delta p}{p} \Bigr)^2&=&\Bigl(\frac{\Delta R}{R}\Bigr)^2+(tan \lambda \Delta \lambda)^2
+  % \Bigl(1+\frac{1}{n}\Bigr)^n
+\end{eqnarray}
+Since the transverse momentum is proportional to the bending radius, the
+momentum resolution depends on the accuracy in measuring R and $\lambda$.  If
+the particle is moving in a plane perpendicular to the magnetic field,
+\eq{res_p} becomes
+\begin{equation}\label{dp_dR}
+  \Bigl(\frac{\Delta p}{p} \Bigr)^2=\Bigl(\frac{\Delta R}{R}\Bigr)^2
+\end{equation} 
+In order to compute $\Delta R$ we introduce the {\it sagitta} $s$: in geometric
+terms, the sagitta of a circular arc is the distance from
+the center of the arc to the centre of its base.\\
+% An explanatory scheme
+% is given in \fig{sagitta_a}.\\
+The sagitta $s$ is related to the magnetic bending radius $R$ and the magnetic
+deflection angle $\alpha$ by
+% The relation between the track radius $R$ and $s$ is
+\begin{eqnarray}
+  s&=&R(1-\cos \alpha)\nonumber\\
+   &=&R[1-(1-\frac{\alpha^2}{2}+\mathcal{O}(\alpha^4))]\nonumber\\
+   &\simeq&R\frac{\alpha^2}{2}\nonumber\\
+   &\simeq&\frac{R}{2}\Bigl(\frac{L}{2R} \Bigr)^2
+\end{eqnarray}
+where the approximation holds for small angles and
+$\alpha\simeq \sin \alpha=(L/2)/R$.  The sagitta $s$ is the maximum deviation of
+the track from a straight line, which for a tracker lever arm $L=1$~m, a
+magnetic field $B=4$~T, and momentum $p=1000$~GeV/c gives a
+sagitta of $150$~$\mu$m.\\
+Known %sagitta
+$s=L^2/8R$ the error on the radius $R$ is related to the sagitta error by
+\begin{equation}
+  |\Delta s|=\frac{L^2}{8R}\frac{\Delta R}{R}=\frac{L^2}{8R}\frac{\Delta p}{p}
+\end{equation}
+The determination of the sagitta requires at least three position measurements
+$y_{1}, y_{2}, y_{3}$.
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.5\textwidth]{cap1/sagitta_a.jpg}
+  \caption{\textit{Sagitta $s$ measurement from track arc curvature $R$ in
+      magnetic spectrometer~\cite{Grupen}.}}\label{sagitta_a}
+  % \centering\includegraphics[width=0.35\textwidth]{cap1/sagitta_b.jpg}
+  % \caption{\textit{Illustration of the circular motion transverse to uniform B
+  % field and of the sagitta method for momentum determinatio
+  % ~\cite{}.}}\label{sagitta_b}
+\end{figure}
+These can be obtained from three tracking detectors positioned at the entrance
+($y_{1}$) and at the exit($y_{2}$) of the magnet, while one chamber could be
+placed in the centre of the magnet ($y_{3}$) as shown in \fig{sagitta_a}:
+Because of $s$ and under the assumption that the track measurement errors
+$\Delta y$ are the same for all chambers, it follows that
+\begin{equation}
+  s=y_{3}-\frac{y_{1}+y_{2}}{2}       \qquad    \Delta s=\sqrt\frac{3}{2}\Delta y
+\end{equation}
+This leads to a momentum resolution from track measurement errors of
+% where $\Delta y$ is the error on the position. It follows that
+\begin{equation}\label{err_p}
+  \frac{\Delta p}{p}=\sqrt\frac{3}{2}\frac{8p}{0.3BL^2}\Delta y
+\end{equation}
+It is worth to notice that relative error on the momentum:
+\begin{itemize}
+\item is proportional to the momentum $p$ itself;
+\item is inversely proportional to $B$;
+\item is inversely proportional to $L^2$;
+\item is proportional to coordinate measurement error $\Delta y$;
+\item does not depend on the radius $R$.
+\end{itemize}
+If the track is measured not only at three but at N points equally distributed
+over the magnet length L, the \eq{err_p} due to the finite track measurement
+error is given by
+% The equation~\ref{err_p} can be generalised to N measurements case:
+\begin{equation}\label{err_track}
+  \frac{\Delta p}{p}=\sqrt{4C_{N}}\frac{p \Delta y}{0.3BL^2}
+\end{equation}
+where $C_{N}$ is
+\begin{equation}
+  C_{N}=\frac{180 N^3}{(N-1)(N+1)(N+2)(N+3)}
+\end{equation}
+For $B=1.8$~T, $L=3$~m, $N=4$ and $\Delta y=0.5$~mm~\eq{err_track} leads to
+\begin{equation}
+  \frac{\Delta p}{p}\simeq 10^{-3}\cdot p~[GeV/c]
+\end{equation}
+thus for a particle with a transverse momentum $p=1$~GeV/c, $\Delta p\simeq0.1\%$.\\
+The most important degrading effect from material on the performance of the
+tracking system is multiple scattering (MS). Keeping into account this effect
+the total momentum resolution, assuming the particle is moving perpendicular to
+the $B$ field, is given by
+\begin{equation}
+  \frac{\Delta p}{p}=\frac{\Delta p^{\rm tracking}}{p}\oplus\frac{\Delta p^{\rm MS}}{p}
+\end{equation}
+Where $\oplus$ means that the sum is in quadrature and $\Delta p^{\rm tracking}$
+is
+the uncertainty related to the geometry of the system we discussed before.\\
+In fact, if a charged particle passes through a length of tracker material, then
+it will be randomly deflected with a characteristic opening angle depending on
+the density and thickness of the material (~\fig{multiple_scattering}). Most of
+this deflection is due to Coulomb scattering from nuclei. The Coulomb scattering
+distribution is well represented by the theory of Moli\`ere. It is roughly a
+Gaussian for small deflection angles, but at larger angles it behaves like
+Rutherford scattering, with larger tails than does a Gaussian
+distribution. Under the Gaussian approximation for the central $98\%$ of the
+projected angular distribution, with a width given by
+\begin{equation}
+  \theta_{0}= \frac{13.6~MeV}{\beta cp}n\sqrt{x/X_{0}}\Bigl[1+0.038\ln(x/X_{0}) \Bigr]
+\end{equation}
+Here $p$, $\beta c$, and $n$ are the momentum, velocity, and charge number of
+the incident particle, and $x/X_0$ is the thickness of the
+scattering medium in radiation lengths $X_{0}$.\\
+By recalling \eq{dp_dR} and $R=L/2\alpha$
+% observing that according to the geometry %of \fig{multiple_scattering}
+% the thickness $R$ can be written as (remember $R=L/2\alpha$). Then
+\begin{eqnarray}\label{err_ms}
+  \frac{\Delta p^{\rm MS}}{p}&=&\frac{\Delta \alpha}{\alpha} \nonumber\\
+                             &=&\frac{13.6~MeV/c}{p}\sqrt{\frac{L}{X_0}}\cdot \frac{R}{L}\nonumber\\
+                             &=&\frac{13.6~MeV/c}{p}\frac{1}{BL}\sqrt{\frac{L}{X_0}}\cdot \frac{p}{0.3}\nonumber\\
+                             &=&\frac{13.6~MeV/c}{0.3}\frac{1}{BL}\sqrt{\frac{L}{X_{0}}}
+\end{eqnarray}
+Fortunately, the larger the magnetic field, the smaller the percentage
+deflection of the charged particle relative to the deflection expected from the
+motion in the field.
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.8\textwidth]{cap1/multiple_scattering1.jpg}
+  \caption{\textit{Multiple scattering contribution at small momenta limits
+      resolution~\cite{PDG}.}}\label{multiple_scattering}
+\end{figure}
+Both contributions according to \eq{err_track} and \eq{err_ms} are plotted in
+\fig{momentum_t}: at low momenta multiple scattering dominates the error and at
+high momenta it is limited by the track measurement error.
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.8\textwidth]{cap1/momentum_total.jpg}
+  \caption{\textit{Momentum resolution as a function of momentum, for component
+      perpendicular to magnetic field:
+      $\left(\frac{\Delta p}{p}\right)^2\propto \left(\frac{p}{BL^2}\right)^2+k
+      \left(\frac{1}{B\sqrt{LX_0}}\right)^2$~\cite{Grupen}.}}\label{momentum_t}
+\end{figure}
+
+
+
+
+
+
+
+\subsection{Direct lifetime measurements}
+
+At high momenta the Lorentz boost\footnote{} is rather large so that the mean
+path of a unstable particle can be of the order of millimetres. Two main methods
+are used to measure the lifetime of unstable particles:
+\begin{itemize}
+\item {\it Impact parameter method}. In the projection orthogonal to the beams
+  the impact parameter is defined as the minimum distance between the trajectory
+  of a charged particle and the production point of the event. A sign is
+  attributed to it by means of an ad hoc convention. It is positive if the
+  crossing point of the charged particle and the flight direction of the parent
+  is in the same hemisphere as the charged particle, negative
+  otherwise~\fig{decay_length_a}.
+  \begin{figure}[!htbp]
+    \centering\includegraphics[width=0.6\textwidth]{cap1/decay_length_a.jpg}
+    \caption{\textit{The definition of lifetime-signed track impact parameter
+        $d$ and decay length $L$.~\cite{Barker}.}}\label{decay_length_a}
+  \end{figure}
+  The main advantage of the impact parameter method lies in its independence, on
+  an average, of the particle momentum, since $<\delta>\simeq c \tau$. This is
+  particularly important for B's, because of the unknown momentum fraction
+  subtracted by the hadronization particles~\cite{Green}. It loses however the
+  advantage of the boost, which helps in measuring the decay length.
+\item {\it Decay length method}. The decay length is the distance between the
+  production and the decay points of a short lived particle. Its measurement
+  requires the identification of the primary and of the secondary vertices as
+  the crossing points of several (at least two) charged tracks.
+\end{itemize}
+Measuring particle lifetimes by decay length reconstruction would be based on
+the following relationship
+\begin{equation}
+  t=\frac{L}{\beta\gamma c} = L\frac{m}{p}
+\end{equation}
+where t is the (proper) lifetime of a particle with momentum $p$ and rest mass
+$m$. The uncertainty on the lifetime therefore depends on
+both decay length and momentum resolution.\\
+The former expression provides the dependence on the energy since
+$E=\sqrt{(pc)^2-(mc^2)^2} \sim pc$. The key point is that $\langle L \rangle$
+can be found directly without measuring $E$. It is simply the average measured
+distance from the primary interaction vertex to the product decay vertex. In
+practice, we use the average of the transverse decay length,
+$L_{xy}=L |\sin \theta|$, where $\theta$ is the angle of the particle flight
+path with respect to the beam axis. This is necessitated for example by the fact
+that the net longitudinal momentum of a heavy quark pair is not known in the
+proton or anti-proton collisions. The partons themselves have broad momentum
+distributions within the proton or anti-proton.
+ 
+
+
+
+
+% \subsubsection{Time of flight}
+%
+% A similar measurement is the \gls{tof}. If a system of particles of different
+% masses has been prepared to possess a unique momentum, for example by
+% collimation in a magnetic field, then time of flight gives us velocity and
+% hence 'particle identification' or the mass of a given particle.
+%% {\color{red}In addition to the coordinates, some other information such is
+%% sometimes available but must be treated with great care when used in a
+%% geometry program.}
+% The most straightforward method for measuring the velocity and thus identify
+% charged particles is the measurements of time of flight (ToF) combined with
+% the knowledge of momentum: ToF measurement may allow discrimination between
+% particle of same momentum but different masses.
+% \\
+% The speed of a particle of mass $m$, momentum $p$, traveling a distance $L$ in
+% a time $t$ is given by
+% \begin{equation}
+%v=\frac{L}{t}
+%\end{equation}
+%then
+%\begin{equation}
+%\beta=\frac{v}{c}=\frac{L}{ct}
+%\end{equation}
+%Using $p= |\vec{p}|= m\gamma\beta c$ with $\gamma =1/\sqrt{1-\beta ^2}$, we
+% find:
+% \begin{equation}
+%m=\frac{p}{\gamma \beta c}=\frac{p}{c}\sqrt{\frac{c^2t^2}{L^2}-1}
+%\end{equation}
+%A ToF measurement system consists usually, for their fast response, of two
+% scintillator plastic counters as shown in \fig{counter}.
+% \begin{figure}[!htbp]
+%   \centering\includegraphics[width=0.6\textwidth]{cap1/counter.jpg}
+%   \caption{\textit{Schematic description of a ToF measurement system. The
+%   start and stop counter are read each by a photomultiplier (PM). The chain of
+%   time measurement for each counter consists of a discriminator (DISC) and
+%   time digital-converter (TDC~$(t_i)$), while charge measurement is obtained
+%   from an analog to digital converter
+%   (ADC~$(A_i)$).~\cite{Leroy}.}}\label{counter}
+% \end{figure}\label{momentum_total}
+% If the two scintillators are separated by a distance $L$ then two particles
+% tagged as $"1"$ and $"2"$ of the same momentum $p$, with masses $m_i$,
+% velocities $v_i$ and energies $E_i$ will respectively traverse this distance
+% with times of flight
+% \begin{equation}
+%  t_1=\frac{L}{v_1}=\frac{L}{c}\frac{1}{\beta_1}=\frac{L}{c}\frac{E_1}{pc}=\frac{L}{c}\frac{\sqrt{m_1^2c^4+p^2c^2}}{pc}
+%\end{equation}
+%and
+%\begin{equation}
+%  t_2=\frac{L}{v_2}=\frac{L}{c}\frac{1}{\beta_2}=\frac{L}{c}\frac{E_2}{pc}=\frac{L}{c}\frac{\sqrt{m_2^2c^4+p^2c^2}}{pc}
+%\end{equation}
+%There will be a ToF difference between these two particles of
+%\begin{equation}\label{delta_t}
+%\Delta t=t_2-t_1=\frac{L}{pc^2} \Bigl( \sqrt{m_2^2c^4+p^2c^2}-\sqrt{m_1^2c^4+p^2c^2} \Bigr)
+%\end{equation}
+%In the relativistic limit ($pc \gg mc^2$), the equation may be approximated by:
+%\begin{equation}
+%  \Delta t=\frac{L}{pc^2}\cdot pc \Bigl[ \Bigl(1+\frac{m_2^2c^2}{2p^2} \Bigr)- \Bigl(1+\frac{m_1^2c^2}{2p^2} \Bigr) \Bigr]
+%\end{equation}
+%The distance $L$ is usually one or several meters and times of reference are in
+% picoseconds (ps), therefore it is standard to express
+% the ration $\Delta t/L$ in ps/m units.\\
+% Eq.~(\ref{delta_t}) gives the maximum momentum in order to distinguish two
+% different particles. If the uncertainty on the ToF is $\sigma(\Delta t)$ then
+% \begin{equation}
+%\sigma(\Delta t)< \Delta t=\frac{Lc}{2p^2}(m_2^2-m_1^2) \quad \Rightarrow \quad p^2<\frac{Lc}{2\sigma(\Delta t)}(m_2^2-m_1^2)
+%\end{equation}
+%For instance, if $\sigma(\Delta t)=\pm~250$~ps and the distance of separation
+% between two scintillator counters is $L=5$~m, the former equation gives a
+% maximum momentum of ({\color{red}mettere fig pag.91 del libro 6}):
+% \begin{itemize}
+% \item $\sim 1.9$~GeV/c to achieve pion-kaon separation, for which
+%   $m_K^2-m_\pi^2=0.224$~GeV$^2$/c$^4$;
+% \item $\sim 3.3$~GeV/c to achieve proton-kaon separation, for which
+%   $m_p^2-m_K^2=0.637$~GeV$^2$/c$^4$.
+% \end{itemize}
+% ToF measurement technique does not apply to highly relativistic particles
+% since in that case the ToF difference is close to zero and negligible compared
+% to the standard time resolutions of a few hundred picoseconds achieved. In the
+% non-relativistic limit ($\beta \sim 0.1$, $\gamma \sim 1.0$),
+% eq.~(\ref{delta_t}) \eq{delta_t} becomes:
+% \begin{equation}
+%\Delta t=\frac{L}{p} (m_2-m_1)=\frac{L}{p} \Delta m
+%\end{equation}
+%Consequently, for a time resolution of $\Delta t \sim 200$~ps and a flight path
+% $L=1$~m, it is possible to discriminate between low-energy particles to an
+% accuracy better than $1\%$.
+% \\
+% {\color{red}This statement reflects the need for a highly precise tracking
+% device, being able to resolve secondary and tertiary vertices within
+% high-particle densities. Since the dis- tance between the primary interaction
+% point and the secondary vertex is proportional to the lifetime of the
+% participating particle, it is an excellent quantity to identify particle
+% flavour in a very fast and precise way. In colliding beam experiments this
+% method was applied especially to tag the presence of b quarks within particle
+% jets.}
+%
+\section{Track detectors}
+\label{sec:tracking_detectors}
+
+%%%% vedi 2 grupen cap 7
+
+
+\section{History of Si semiconductor}
+\label{sec:storia_si}
+
+Silicon detectors have found use in many fields of physical research. Their
+range of application extends from the interaction of leptons, quarks, gluons,
+gauge bosons, and the hunt for the Higgs particles at the scale of less than
+$10^{-20}$~m to the investigation of large scales, greater than $10^{28}$~m,
+{\em i.e.} the scale of the entire universe. One of the primary reasons for the
+common use of silicon as detector material is that it is a semiconductor
+(\ref{cap:semiconductor}) with a moderate band-gap of $1.12$~eV. In fact,
+high-resolution radiation spectroscopy requires a small band gap energy to
+ensure a low average ionization energy, hence increasing the number of charge
+carriers excited for specific ionizing radiation energies. Besides this is large
+compared to the thermal energy at room temperature of ${\it k}T=1/40$~eV, this
+reduces resolution degradation due to statistical fluctuations. Thus silicon
+requires cooling only in ultra-low-noise applications or to mitigate radiation
+damage. The energy to create an electron-hole (e-h) pair is $3.6$~eV, small
+compared to the ionization energy of $15$~eV in argon gas, leading to an
+ionization yield for \glspl{mip}\footnote{A \gls{mip} is a particle whose mean
+  energy loss rate through matter is close to the minimum of the Bethe-Bloch
+  formula. A \gls{mip} loses approximately 39~keV/100~$\mu$m in
+  silicon~\cite{Leo}. } of about 80 e-h pairs per micrometer. Searches for a
+different material that could replace silicon as the semiconductor of choice in
+tracking devices have not yet been successful. Another reason for the uniqueness
+of silicon is its wide technology base and it has helped to spawn the use of
+pixel detectors for two-dimensional applications. If the large electron-hole
+yield and low leakage currents made silicon detectors a resource in low-energy
+spectroscopy, their breakthrough in \gls{hep} particle tracking came with the
+introduction of the planar technology by Kemmer in 1980~\cite{Kemmer_a} (with
+fixed target experiments at both \gls{cern} and \gls{fnal}). At a first stage
+electronics required large banks of amplifier boards that limited its
+utility. With the introduction of \gls{asic} amplifier chips squeezed to a size
+that allow direct couple to the detectors. This gave rise to
+the era of silicon detector for high energy physics.\\
+During the evolution of semiconductor detector technologies, different
+strategies were implemented to improve tracking accuracy. The first usage of
+silicon detectors as precision measurements device dates from the late 1970's,
+where pioneering work was done for vertex detection in fixed-target charm
+physics experiment.
+
+\hskip 1cm The first usage in colliding beam experiments started in the late
+1980's with the Mark II experiment at the \gls{slc}. In this case silicon
+detectors were used for precision vertex finding and identification of secondary
+vertices.\\
+In the silicon detectors developed for the Mark II~\cite{Mark-II} the vertexing
+errors due to multiple scattering ( Par.~\ref{Production and decay position})
+were reduced by the following paradigm for vertex detectors:
+\begin{enumerate}
+\item \glspl{asic} at the end of ladders;
+\item minimize the mass inside the tracking volume;
+\item minimize distance between interaction point and detectors.
+\end{enumerate}
+The basic layout of the \gls{ssvd} of Mark II experiment is shown schematically
+in \fig{paradigm_a}.
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.8\textwidth]{cap1/paradigm_a.jpg}
+  \caption{\textit{SSVD scheme consisting of 36 modules built and operating in
+      the Mark II solenoidal detector at the
+      SLC~\cite{Mark-II}.}}\label{paradigm_a}
+\end{figure}
+It consisted of 3 layers with 12 detectors each, and 512 strips per detector,
+resulting in a total of 18432 strips. The strips were parallel to the axis of
+the beam, thus the detectors measured positions in the plane transverse to the
+beam. The detectors were read out from both ends by two pairs of custom-designed
+\gls{vlsi}\footnote{ \gls{vlsi} is the process of creating an integrated circuit
+  by combining thousands of transistors into a single chip. \gls{vlsi} began in
+  the 1970s when complex semiconductor and communication technologies were being
+  developed.}  chips with 128 channels each. The circuits and the chips were
+placed outside the active area of the detectors and therefore did not
+contribute to the multiple scattering.\\
+In the \gls{lep} collider era, quark tagging and spectroscopy of short-lived
+particles required high precision tracking and flavour tagging via secondary
+vertex reconstruction. Taking into account the success of Mark II and similar
+experiments, silicon was the obvious candidate for innermost tracking detector
+(complemented by drift and/or time projection chambers at larger radii). The
+first silicon vertex detectors were installed in \gls{delphi} and
+\gls{aleph}\footnote{The \gls{aleph} and \gls{delphi} experiments were located
+  at \gls{cern}. Founded in 1954, the CERN laboratory sits astride the
+  Franco-Swiss border near Geneva.} at the \gls{lep} accelerator\footnote{With
+  its 27-kilometre circumference, the \gls{lep} collider (\fig{lep_figure}) was
+  and still is the largest electron-positron accelerator ever built. \gls{lep}
+  was commissioned in July 1989 and the first beam circulated in the collider on
+  14 July. The collider's initial energy was chosen to be around 91~GeV, so that
+  Z bosons could be produced. During 11 years of research, LEP's experiments
+  provided a detailed study of the electroweak interaction. Measurements
+  performed at LEP also proved that there are exactly three generations of
+  particles of matter.}.
+\begin{figure}[!htbp]
+  \centering \subfloat[] {\includegraphics[width=0.6\textwidth]{cap1/lep_a.jpg}}
+  \subfloat[] {\includegraphics[width=0.4\textwidth]{cap1/lep_b.jpg}}
+  \caption{\textit{a) Cern was home to the LEP, a circular lepton collider, the
+      most powerful ever built and used a series of accelerators. b) In its
+      first phase of operation, LEP consisted of 5176 magnets and 128
+      accelerating cavities. CERN's accelerator complex provided the particles
+      and four enormous detectors, ALEPH, DELPHI, L3 and OPAL~\cite{Cernlab}.}}
+  \label{lep_figure}
+\end{figure}
+
+\hskip 1cm \gls{delphi} started in 1989 with two layers with single-sided
+readout, a r and $\phi$ sensitive detector as the first silicon vertex detector
+at \gls{lep}. In 1990 the beam pipe radius was reduced and a third layer, still
+single sided, r-$\phi$ only, was introduced. Its 1994 upgrade finally contained
+double-sided silicon sensors on three layers to establish a 3D readout of r,
+$\phi$ and z. The configuration of the \gls{delphi} detector is shown in
+\fig{delphi_a}.
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.8\textwidth]{cap1/delphi_a.jpg}
+  \caption{\textit{The Delphi detector was a textbook example of a multipurpose
+      detector. In particular, the microvertex detector lied close to the beam
+      pipe~\cite{Hartmann}.}}\label{delphi_a}
+\end{figure}
+The main physics expectation driving the detector design were large angular
+coverage (due to four fermion processes as the examples shown
+in~\fig{4_fermions}) and precise tagging for $b$ quarks down to low polar
+angles, connected to Higgs boson and supersymmetric particle
+searches~\cite{Delphi_b}.
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.6\textwidth]{cap1/4_fermions.jpg}
+  \caption{\textit{Examples of four-fermion processes:
+      $e^{+}e^{-} \rightarrow f_{1} \bar{f_{2}} f_{3} \bar{f_{4}}
+      $.}}\label{4_fermions}
+\end{figure}
+The \gls{delphi} \gls{mvd} was the status of the art. Its optimization was
+achieved by minimizing the material in front of the detector, by measuring the
+first point precisely, as close as possible to the interaction region, and
+finally having adequate angular resolution.  The three concentric layers of the
+barrel detector covered the angular region between $\ang{21}$ and $\ang{59}$
+(see ~\fig{delphi_b}).
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.8\textwidth]{cap1/delphi_b.jpg}
+  \caption{\textit{Cross section of the modules and supports for one quadrant of
+      the Silicon Tracker~\cite{Delphi_b}.}}\label{delphi_b}
+\end{figure}
+Two pixel layers, the first one being located inside the barrel, and two
+ministrip detector endcaps covered the angular region $\ang{11}-\ang{26}$ and
+$\ang{154}-\ang{169}$. The \gls{mvd} was divided into closer (at $R=6.6$~cm),
+inner (at $R=9.2$~cm) and outer layer (at $R=10.6$~cm) tightly fitting between
+the beam pipe and inner drift chamber. The material was kept to a minimum by the
+use of double-sided detectors and light mechanics. The 73728 readout strips,
+oriented along the beam, had a total active area of 0.42~m$^2$. The strip pitch
+was 25~$\mu$m and every other strip was read out by low power charge amplifiers,
+giving a signal to noise ratio of 15:1 for \glspl{mip}~\cite{Delphi_a}. In the
+r-$\phi$ plane the resolution was around 8~$\mu$m, while in the r-z plane the
+readout pitch was different for plaquettes at various angles, varying between
+about 10 and 25~$\mu$m for different tracks inclination, in order to give the
+best resolution possible perpendicularly to the track. The pixel size was
+330$\times$330~$\mu$m$^2$, and pixels at the boundary between neighboring
+read-out chips had increasing dimensions, so that blind regions in the active
+area were avoided. The ministrip plaquettes had
+a readout pitch of 200~$\mu$m with one intermediate strip.\\
+One has to value the fact that the \gls{delphi} vertex detector has been the
+first one using forward structures. These were necessary to improve track
+extrapolation towards the forward \gls{rich} to improve \gls{pid}.
+
+\hskip 1cm The original goal of the \gls{aleph} collaboration was the
+construction of a vertex detector devoted to the study of the production and the
+decay properties of short-lived heavy-flavours particles in the decay of the
+Z$^0$ resonance\footnote{The \gls{lep} operated at centre-of-mass energies close
+  to the Z resonance during the years 1989 to 1995. The Z lineshape has been
+  studied by measuring the visible cross section at energies near to the Z
+  mass. This allowed the determination of the mass $M_Z$, the total width
+  $\Gamma_Z$, the partial decay widths and the lepton forward-backward
+  asymmetries.}(see~\fig{z_resonance}).
+\begin{figure}[!htbp]
+  \centering \subfloat[]
+  {\includegraphics[width=0.4\textwidth]{cap1/z_resonace_a.jpg}} \subfloat[]
+  {\includegraphics[width=0.4\textwidth]{cap1/z_resonace_b.jpg}}
+  \caption{\textit{Diagrams for $e^{+}e^{-} \rightarrow \mu^{+} \mu^{-}$ via (a)
+      photon exchange and (b) $Z^0$ exchange. The interference term between the
+      two processes has to be taken into account: for example the angular
+      distribution does not follow exactly the pure QED
+      prediction~\cite{Perkins}.}}\label{z_resonance}
+\end{figure}
+The requirement was a tracking accuracy good enough to deal with average
+transverse impact parameter in the 100~$\mu$m range and with secondary vertices
+a few mm apart from the interaction point. The \gls{aleph} silicon vertex
+detector (VDET I) was made out of two concentric cylindrical layers of
+double-sided silicon strip detectors (\fig{aleph_vdetI}); this geometry allowed
+to measure the impact point of charged particles in both r-$\phi$ and z
+coordinates.
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.8\textwidth]{cap1/aleph_vdetI.jpg}
+  \caption{\textit{Configuration of the ALEPH silicon vertex detector (VDET
+      I)~\cite{Focardi}.}}\label{aleph_vdetI}
+\end{figure}
+The detector successfully operated for 4 years (during the LEP1 phase from 1991
+until 1995); among the problems encountered
+particular concern was the damage induced by radiation.\\
+The Higgs boson search at LEP2 increased the importance of effective vertex
+detection. In view of this it was decided to upgrade the previously installed
+VDET I. The new vertex detector (VDET II) consisted of 48 modules glued in 24
+faces mounted in two concentric layers (\fig{aleph}).
+\begin{figure}[!htbp]
+  \centering \subfloat[]
+  {\includegraphics[width=0.4\textwidth]{cap1/aleph_a.jpg}} \subfloat[]
+  {\includegraphics[width=0.4\textwidth]{cap1/aleph_b.jpg}}
+  \caption{\textit{VDET II: a) face and b) overall
+      view~\cite{Aleph}.}}\label{aleph}
+\end{figure}
+The inner layer with 9 faces was located at an average radius of 6.3~cm while
+the outer layer with 15 faces was at a radius of 11~cm.  Each module had three
+double-sided silicon strip detectors with dimensions 6.4$\times$5.3~cm$^2$ each,
+the thickness was 300~$\mu$m.  The strip pitch on the junction side (r-$\phi$
+view) was 25~$\mu$m while on the ohmic side (z view) was 50~$\mu$m. In the
+r-$\phi$ view 1021 strips were read-out while in the z view 960 strips were
+read-out with a total of 95088 for the complete detector. The spatial resolution
+obtained was 10~$\mu$m on the r-$\phi$ side and 15~$\mu$m
+on the z side.\\
+Among achieved improvements it was relevant the increased solid angle coverage
+from $|\cos \theta|\leq$0.65 (VDET I) to $|\cos \theta|\leq$0.85 (VDET II) for
+tracks to pass through at least the inner layer: this increased the discovery
+potential for the Higgs\footnote{The Higgs-Englert mechanism was first proposed
+  by Englert and Higgs in 1964. It explains how the force responsible for weak
+  decays is much weaker than electromagnetism and the mechanism than endows
+  fundamental particle with mass. A key prediction of the idea is the existence
+  of a massive boson of a new type, the Higgs boson, which was discovered at
+  CERN in 2012.}
+search.\\
+
+The next step came in the use of radiation-hard electronics and the realization
+that high luminosity experimentation will require special attention to radiation
+damage effects. By using colliding beams with different energies, such that the
+center-of-mass is moving, experimentalists were able to determine asymmetries
+between the decay times of particle and antiparticle. The presence of many
+low-energy particles in the decays required that the detectors presented the
+minimum amount of material in the active volume. Still following the vertex
+detector paradigm were the vertex detectors for B-factories,
+Belle\footnote{Belle is not an acronym, it is the French word for
+  beauty. Although we now usually call it the ``bottom'' quark, it is sometimes
+  referred to as the ``beauty'' quark. Belle sits at the \gls{kek} in Tsukuba,
+  Japan (\fig{kek_figure}).} and BaBar\footnote{The name BaBar is derived from
+  the nomenclature for the B meson and its antiparticle $\overline{\rm
+    B}$.
+  Named for the elephant in Laurent DeBrunhoff's children's books. Babar is
+  located at the \gls{slac}, which is operated by Stanford University for the
+  Department of Energy in California (\fig{slac_figure}).}.
+
+\begin{figure}[!htbp]
+  \centering \subfloat[]
+  {\includegraphics[width=0.65\textwidth]{cap1/kek_a.jpg}} \subfloat[]
+  {\includegraphics[width=0.35\textwidth]{cap1/kek_b.jpg}}
+  \caption{\textit{a) KEK is one of the world's leading accelerator science
+      research laboratories, using high-energy particle beams and synchrotron
+      light sources to probe the fundamental properties of matter. KEK was home
+      to the KEKB, an electron-positron collider aimed at experimental
+      verification of the Kobayashi-Maskawa theory of CP-violation. b) The Belle
+      detector was located at the collision point on the north-east side of the
+      KEKB rings~\cite{Keklab}.}}
+  \label{kek_figure}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering \subfloat[]
+  {\includegraphics[width=0.45\textwidth]{cap1/slac_a.jpg}} \subfloat[]
+  {\includegraphics[width=0.55\textwidth]{cap1/slac_b.jpg}}
+  \caption{\textit{a) SLAC is one of 10 Department of Energy Office of Science
+      laboratories and is operated by Stanford University since 1962. The main
+      accelerator is 2 miles long, the longest linear accelerator in the world,
+      and has been operational since 1966. From 1999 to 2008, the main purpose
+      of the linear accelerator was to inject electrons and positrons into the
+      PEP-II accelerator. b) PEP-II, an electron-positron collider, was host to
+      the BaBar experiment, one of the so-called B-Factory experiments studying
+      charge-parity symmetry~\cite{Slaclab}.}}
+  \label{slac_figure}
+\end{figure}
+
+\hskip 1cm The Belle detector, located at the collision point of the e$^+$~e$^-$
+asymmetric-energy collider \gls{kekb}, was designed primarily to observe CP
+violation\footnote{The CP transformation combines charge conjugation C with
+  parity P. Under C, particles and antiparticles are interchanged, by
+  conjugating all internal quantum numbers, e.g., Q $\to$ -Q for electromagnetic
+  charge. Under P, the handedness of space is reversed, x $\to$ -x. Thus, for
+  example, a left-handed electron e$^{-}_{L}$ is transformed under CP into a
+  right-handed positron, e$^{+}_{R}$. If CP were an exact symmetry, the laws of
+  Nature would be the same for matter and for antimatter. The weak interactions,
+  on the other hand, violate C and P in the strongest possible way. For example,
+  the charged W bosons couple to left-handed electrons, e$^{-}_{L}$, and to
+  their CP-conjugate right-handed positrons, e$^{+}_{R}$, but to neither their
+  C-conjugate left-handed positrons, e$^{+}_{L}$, nor their P-conjugate
+  right-handed electrons, e$^{-}_{R}$. While weak interactions violate C and P
+  separately, CP is still preserved in most weak interaction processes. The CP
+  symmetry is, however, violated in certain rare processes, as discovered in
+  neutral K decays in 1964, and recently observed in neutral B decays.} in B
+decays and began taking data in 1999 (see \fig{belle_a}).
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.7\textwidth]{cap1/belle_a.jpg}
+  \caption{\it Side view of configuration of the Belle detector that was
+    configured around a 1.5~T superconducting
+    solenoid~\cite{Abashian}.}\label{belle_a}
+\end{figure}
+Due to the asymmetric energies of the colliding beams ($3.5$~GeV $\times$
+$8$~GeV), the $\Upsilon (4S)$ and its daughter B mesons were produced with
+$\beta \gamma \approx 0.425$ in the laboratory frame~\cite{Belle}. The
+difference in B meson decay times was measured using the difference in decay
+vertex positions. This key feature of the Belle experiment allowed the
+measurement of CP violation due to an interplay of decay and mixing in neutral B
+decays. To this end, the detector used a \gls{svd} to make a precision
+measurement of the decay
+vertices.\\
+Since most particles of interest in Belle had momenta of 1~GeV/c or less, the
+vertex resolution was dominated by the multiple-Coulomb scattering.  This
+imposed strict constraints on the design of the detector:
+\begin{itemize}
+\item the innermost layer of the vertex detector had to be placed as close to
+  the interaction point as possible;
+\item the support structure had to be low in mass but rigid;
+\item the readout electronics had to be placed outside of the tracking volume.
+\end{itemize}
+The \gls{svd} consisted of three concentric cylindrical layers of silicon
+sensors in a barrel-only design and covered the angle range
+$\ang{23} < \theta < \ang{139}$ ($\theta$ being the angle from the beam axis),
+this corresponds to 86 $\%$ of the full solid angle. \fig{belle_b} shows the
+geometrical configuration of the \gls{svd}: the radii of the three layers are
+30~mm, 45.5~mm and 60.5~mm,
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.7\textwidth]{cap1/belle.jpg}
+  \caption{\it Configuration of the Belle SVD~\cite{Belle}.}\label{belle_b}
+  % \caption{\it Configuration of the Belle \gls{svd}~\cite{Belle}.}
+\end{figure}
+each layer was constructed from independent ladders and consisted of identical
+\glspl{dssd}\footnote{The \glspl{dssd} were fabricated by Hamamatsu Photonics
+  (HPK S6936), and were originally designed for the \gls{delphi} \gls{mvd}.}
+The sensor size was $57.5 \times 33.5$~mm$^2$, the strip pitch was 25~$\mu$m on
+the $\phi$-side and 42~$\mu$m on the z-side. Adjacent strips were connected to
+one readout trace on the z-side which gave an effective strip pitch of
+84~$\mu$m. In total 102 \glspl{dssd} were used and the
+total number of readout channels was 81920.\\
+Since the average distance between the two B decay vertex positions was
+$\sim 200$~$\mu$m, the \gls{svd} was required to measure the distance between
+the two B decay vertices to a precision of $\sim 100$~$\mu$m.  This provided an
+adequate measurement of the proper time difference and suppressed various
+sources of backgrounds.
+
+\hskip 1cm The primary objective of the BaBar experiment was the systematic
+study of CP violation in the B-meson system, the idea being that matter and
+antimatter behave in slightly different ways\footnote{By observing the collision
+  of high-energy electrons and positrons at \gls{slac}'s B Factory from 1998
+  through 2008, the BaBar collaboration showed that, indeed, B mesons and their
+  antiparticles do not always decay in the same way, offering strong evidence
+  for CP violation. In 2008, Yoichiro Nambu, Makoto Kobayashi and Toshihide
+  Maskawa were awarded the 2008 Nobel Prize in physics for developing the theory
+  of CP violation.}. Via a set of complementary measurements it should be
+possible to overconstrain the CKM quark mixing matrix and to perform a stringent
+test of the Standard Model\footnote{The real physical particles we actually
+  detect experimentally correspond to mass eigenstates (i.e. those that
+  propagate in space time) and these do not necessarily correspond to the
+  eigenstates of the weak interaction. To describe possible weak decays, we
+  shall need to rotate the mass eigenstates. The rotation matrix is known as CKM
+  (from Cabibbo, Kobayashi and Maskawa) matrix. }.\\
+The BaBar detector was located at the sole interaction point of the \gls{pep} II
+e$^+$~e$^-$ collider at \gls{slac}, which operated with a center of mass energy
+at the $\Upsilon$(4S) resonance, where B-meson pairs could be produced with a
+large cross-section. The beam energies were asymmetric, 3.1 and 9.0~GeV for the
+e$^+$~e$^-$ beams, respectively, resulting in a boost $\beta \gamma = 0.56$ in
+the lab frame~\cite{BaBar}. The boost of the B-meson pair allowed time-dependent
+CP measurements to be made, but the average separation was small,
+$\sim 260$~$\mu$m, requiring high
+precision in the measurement of the B-meson decay vertices.\\
+The BaBar design is shown in \fig{babar_a}.
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.8\textwidth]{cap1/babar_a.jpg}
+  \caption{\it BABAR detector longitudinal section through the detector
+    center~\cite{babar_status_2001}.}\label{babar_a}
+\end{figure}
+It consisted of a \gls{svd}, a drift chamber, a particle identification system,
+a CsI electromagnetic calorimeter and a magnet (the superconducting solenoid was
+designed for a field of 1.5~T). All of these detectors operated with good
+performance for laboratory angles between $\ang{17}$ to $\ang{150}$,
+corresponding to the range $-0.95 < \cos \theta_{cm} < 0.87$.\\
+The tracking system in BaBar consisted of the vertex detector and drift
+chamber. For particles with low transverse momenta with $p_t$ up to 100~MeV/c
+(which may not be reconstructed in the drift chamber) the vertex detector, which
+was the only tracking device inside the 20~cm radius of the support tube, should
+also provide full tracking information. Due to this capability to perform
+stand-alone
+tracking, the BaBar vertex detector was known as the \gls{svt}.\\
+The \gls{svt} provided five measurements, in each of the two z and r-$\phi$
+directions, of the positions of all charged particles. Each of the three inner
+layers had six detector modules, arrayed azimuthally around the beam pipe, while
+the outer two layers consisted of 16 and 18 detector modules, respectively
+(\fig{babar}).
+\begin{figure}[!htbp]
+  \centering \subfloat[]
+  {\includegraphics[width=0.8\textwidth]{cap1/babar_aa.jpg}} \subfloat[]
+  {\includegraphics[width=0.25\textwidth]{cap1/babar_aaa.jpg}}
+  \caption{\textit{Schematic view of SVT: a) longitudinal section and b)
+      transverse section~\cite{babar_status_2001}.}}\label{babar}
+\end{figure}
+The inner detector modules were traditional barrel-style structures, while the
+outer detector modules employed a novel arch structure in which the detectors
+were electrically connected across an angle. The bends in the arch modules
+minimized the area of silicon required to cover the solid angle and also avoided
+very large track incident angles. In order to satisfy the requirement of
+minimizing material in the detector acceptance region, one of the main features
+of the \gls{svt} design was the mounting of the readout electronics entirely
+outside the active detector volume.\\
+The design had a total of 340 silicon detectors of seven different types. The
+total silicon area in the \gls{svt} was 0.94~m$^2$, and the number of readout
+channels was $\sim$150000. The relevant geometrical parameters of each layer are
+summarized in Tab.~\ref{babar_b}.
+\begin{table}
+  \begin{center}
+    \begin{tabular}{lcccc}
+      \hline\hline
+      % Layer/view  &  Radius(mm)  &  R-O pitch ($\mu$ m)  &  Floating strips  &  Strip length (mm)  \\
+                    &          &    R-O     &             &  Strip  \\
+      Layer/  &  Radius  &   pitch    &  Floating   &  length \\
+      view    &   (mm)   &  ($\mu$ m) &  strips     &  (mm)   \\ 
+      \hline
+      1 z         &          32  &       100  &     1  &   40  \\
+      1 $\phi$    &          32  &    50-100  &   0-1  &   82  \\
+      2 z         &          40  &       100  &     1  &   48  \\
+      2 $\phi$    &          40  &    55-110  &   0-1  &   88  \\
+      3 z         &          54  &       100  &     1  &   70  \\
+      3 $\phi$    &          54  &       110  &     1  &  128  \\
+      4 z         &      91-127  &       210  &     1  &  104  \\
+      4 $\phi$    &      91-127  &       100  &     1  &  224  \\
+      5 z         &     114-144  &       210  &     1  &  104  \\
+      5 $\phi$    &     114-144  &       100  &     1  &  265  \\
+      \hline\hline
+    \end{tabular}
+    \caption{\it Geometrical parameters for each layer and readout plane of the
+      SVT. Floating strips refers to the number of strips between the readout
+      (R-O) strips~\cite{babar_status_2001}.}\label{babar_b}
+  \end{center}
+\end{table}
+% \begin{figure}[!htbp]
+%   \centering\includegraphics[width=0.55\textwidth]{cap1/babar_b.jpg}
+%   \caption{\it Geometric parameters for each layer and readout plane of the
+%   SVT. Floating strips refers to the number of strips between readout (R-O)
+%   strips~\cite{}.}
+% \end{figure}
+The strip pitch on each of the layers was chosen to achieve point resolutions of
+at least 10-15~$\mu$m in the inner 3 layers and 30-40~$\mu$m in the outer
+layers. Indeed, the \gls{svt} hit resolution for z and $\phi$ side hits as a
+function of track incident angle, for
+each of the five layers, is shown in \fig{babar_resolution}.\\
+\begin{figure}[!htbp]
+  \centering \subfloat[]
+  {\includegraphics[width=0.5\textwidth]{cap1/babar_c.jpg}} \subfloat[]
+  {\includegraphics[width=0.5\textwidth]{cap1/babar_d.jpg}}
+  \caption{\textit{SVT hit resolution in the a) z and b) $\phi$ coordinate in
+      microns, plotted as a function of track incident angle in
+      degrees~\cite{babar_status_2001}.}}\label{babar_resolution}
+\end{figure}
+
+The introduction of tracking detectors for hadron colliders required a shift in
+the tracking detectors paradigm. The first examples of detectors where the
+growing interest in the full tracking and momentum determination rather than
+vertexing only, were \gls{cdf} and D0\footnote{The \gls{cdf} and D0 (named for
+  location on the Tevatron Ring) experiments were located at the \gls{fermilab}
+  in Batavia, Illinois, USA. }, both installed at the Tevatron
+collider\footnote{The Tevatron (\fig{tevatron_figure}), the world's
+  highest-energy proton-antiproton collider, shut down on Sept. 30, 2011. Since
+  1983, the United States's most powerful atom smasher has created particle
+  collisions and provided particle beams to fixed target experiments and test
+  beam areas. The Tevatron has informed some of the most important fundamental
+  discoveries of our time, such as the existence of the top quark and five
+  baryons, which helped to test and refine the Standard Model of particle
+  physics and shape our understanding of matter, energy, space and time.}.
+
+The Tevatron collider at the \gls{fnal} collided proton and antiproton beams at
+a center-of-mass energy of 1.96~TeV. The collisions occurred at two interaction
+points where the multipurpose detectors \gls{cdf} and D0 were positioned.
+\begin{figure}[!htbp]
+  \centering \subfloat[]
+  {\includegraphics[width=0.55\textwidth]{cap1/tevatron_a.jpg}} \subfloat[]
+  {\includegraphics[width=0.45\textwidth]{cap1/tevatron_b.jpg}}
+  \caption{\textit{Fermilab a) was home to the Tevatron, once the most powerful
+      particle accelerator in the United States and the second most powerful
+      particle accelerator in the world and b) used a series of
+      accelerators. Starting with hydrogen gas, scientists created proton
+      beams. They diverted a portion of the proton beams to create
+      antiprotons. Once they accumulated enough antiprotons, they loaded them
+      into the Tevatron, where they collided at the CDF and D0 detectors with
+      protons traveling in the opposite direction~\cite{Fermilab}.}}
+  \label{tevatron_figure}
+\end{figure}
+
+\hskip 1cm The \gls{cdf} II\footnote{Construction of \gls{cdf} began in 1982
+  under the leadership of John Peoples and it began to take data in 1985. Over
+  the years, two major updates have been made to \gls{cdf}. The first upgrade
+  began in 1989 and the second upgrade began in 2001. Each upgrade is considered
+  a ``run'', particularly ``run II'' included upgrades on the central tracking
+  system, preshower detectors and extension on muon coverage.} detector was a
+general purpose detector with cylindrical geometry. The innermost part of the
+detector consisted of charged-particle tracking detectors, shown in~\fig{cdf_a},
+located inside a superconducting solenoidal magnet which provided a highly
+uniform 1.4~T magnetic field oriented parallel to the beam axis.
+\begin{figure}[!htbp]
+  \centering\includegraphics[width=0.7\textwidth]{cap1/cdf_a.jpg}
+  \caption{\it Isometric view of the entire CDF II detector
+    ~\cite{Aaltonen}.}\label{cdf_a}
+\end{figure}
+Calorimeters and muon systems outside the solenoid provided lepton
+identification and momentum measurement as well as jet energy measurements. The
+tracking detectors and calorimeters were used for jet reconstruction, where the
+former provided identification of jets from heavy (charm and bottom) quarks. The
+inner component of the tracking system was a series of silicon microstrip
+detectors that constituted the \gls{cdf} silicon detector and provided
+resolution on the track momentum transverse to the beam direction, $p_T$, of
+$\sigma(p_T )/p_T = 0.15 \% \cdot p_T/(GeV/c)$. \gls{cdf} used a cylindrical
+coordinate system with the z axis oriented along the proton beam direction and
+azimuthal angle $\phi$ measured around the beam axis. The polar angle $\theta$
+was measured with respect to the positive z (proton-beam) direction and was used
+to define the pseudorapidity $\eta = -\ln (\tan(\theta /2))$. The silicon
+detector was designed to withstand radiation doses up to 2~MRad (0.02~Gy), the
+dose expected during the first 2-5 years of \gls{cdf} operations.\\
+\fig{cdf_b} presents the schematic layout of the \gls{cdf} silicon detector. The
+silicon detector system consisted of three sub-detectors, all with barrel
+geometry: the innermost \gls{l00}, then the \gls{svx} and finally the outermost
+\gls{isl}.
+% \begin{figure}[!htbp]
+%   \centering\includegraphics[width=0.9\textwidth]{cap1/cdf_b.jpg}
+%   \caption{\it Schematic layout of the CDF silicon detectors showing x-y
+%   (r-$\phi$, left) and y-z (r-z, right) views. Note that the z axis is
+%   compressed for illustration purposes~\cite{Aaltonen}.}\label{cdf_b}
+% \end{figure}
+\begin{figure}[!htbp]
+  \centering \subfloat[]
+  {\includegraphics[width=0.4\textwidth]{cap1/cdf_b_I.jpg}} \subfloat[]
+  {\includegraphics[width=0.4\textwidth]{cap1/cdf_b_II.jpg}}
+  \caption{\textit{Schematic layout of the CDF silicon detectors showing a) x-y
+      (r-$\phi$) and b) y-z (r-z) views. Note that the z axis is compressed for
+      illustration purposes~\cite{Aaltonen}.}}\label{cdf_b}
+\end{figure}
+% In the following a brief description of the three systems:
+The basic structural unit of each sub-detector was a ladder, which consisted of
+several silicon microstrip sensors bonded in series (three sensors for \gls{l00}
+ladders, four in \gls{svx} ladders and six in \gls{isl} ladders): the sensors in
+\gls{l00} were single-sided, providing r-$\phi$ information, while sensors in
+the other layers were double-sided, providing both r-$\phi$ and r-z
+information. The sensors in \gls{svx} layers used double-metal readout for a
+$\ang{90}$ strips on the r-z side. Here's the main features of each
+sub-detector:
+\begin{itemize}
+\item the \gls{l00} silicon microstrip detector had an inner radius of 1.15~cm
+  and outer radius of 2.1~cm. It consisted of one layer and had 72 ladders with
+  13000 readout channels in total. Its main purpose was to improve the track
+  impact parameter resolution;
+\item the \gls{svx} detector was built in three cylindrical barrels each 29~cm
+  long. Each barrel contained five layers of double-sided silicon microstrips
+  placed along the beam axis, with radial coverage from 2.5 to 10.7~cm. In
+  total, it had 360 ladders with 405504 channels in the system. One side of each
+  microstrip sensor provided tracking information in the r-$\phi$ plane, with
+  strips oriented parallel to the beam direction, while the other side had
+  strips oriented either perpendicular to the beam axis, providing $\ang{90}$
+  information, or at an angle of $\pm\ang{1.2}$ with respect to the beam axis,
+  providing small-angle stereo information;
+\item the \gls{isl} consisted of one central ($|\eta| < 1$) layer of silicon at
+  a radial position of 22~cm and two forward ($1 < |\eta| < 2$) layers at 20~cm
+  and 28~cm. \gls{isl} had 148 double-sided ladders of 55~cm length each with a
+  total of 303104 channels. An \gls{isl} ladder was composed of three microstrip
+  sensors bonded together. Like \gls{svx}, one side of each sensor provided
+  tracking information in the r-$\phi$ plane while the other side provided
+  tracking information in the r-z plane with $\pm\ang{1.2}$ stereo angle.
+\end{itemize}
+The design of the system was driven by the goal of providing excellent spatial
+resolution in the measurement of charged-particle tracks. These measurements
+were crucial for the reconstruction of the displaced secondary vertices and
+therefore, identification of events with bottom-quarks.
+
+\hskip 1cm To optimize its physics capability for data taking in Run II at the
+Tevatron, the D0 detector\footnote{The D0 collaboration began in 1983 and D0
+  took data from 1992-1996. The experiment was upgraded from 1996-2001 and ran
+  from 2001 until the Tevatron ceased operations in 2011. Run II should bring an
+  increase of the center-of-mass energy to 2~TeV and a tenfold increase of the
+  instantaneous luminosity~\cite{Filthaut}.} has been upgraded (see
+\fig{d_zero_c}).
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{cap1/d_zero_C.jpg}
+  \caption{\textit{Cross sectional view of the Run II of D0 detector. The D0
+      experiment used many different technologies to detect particles and
+      measure their properties. For this it employed several sub-detectors: the
+      tracker consisted of a silicon and a scintillating fiber
+      detector~\cite{D0_c}.}}\label{d_zero_c}
+\end{figure}
+Among the improvements crucial were the addition of an axial central magnetic
+field and much improved tracking and vertexing capabilities. The central
+tracking system was replaced entirely by a scintillating fiber tracker
+surrounding a
+silicon vertex detector called the \gls{smt}.\\
+The tracking system was designed to meet several goals:
+\begin{itemize}
+\item momentum measurement with the introduction of a solenoidal field
+  (p$_{T}$-tracks);
+\item good electron identification and $e/\pi$ rejection;
+\item tracking over a large range in pseudorapidity $2 < |\eta| < 3$;
+\item secondary vertex measurement for identification of b-jets from top and for
+  b-physics;
+\item hardware tracking trigger;
+\item fast detector response to enable operation with a bunch crossing time of
+  132~ns;
+\item radiation hardness.
+\end{itemize}
+The silicon tracker was the high resolution part of the tracking system and was
+the first set of detectors encountered by particles emerging
+from the collision.\\
+The \gls{smt} consisted of six barrel modules with silicon sensors parallel to
+the beamline measuring primarily the $r-\phi$ coordinate and disk detectors
+which measure $r-z$ as well as $r-\phi$. The disk detectors, with silicon
+sensors normal to the beamline, were divided into 12 small ``F-disks'' (with
+inner and outer sensor radii of 2.6 and 10.5~cm) and four sets of ``H-disks''
+(with inner and outer module radii of 9.5 and 26~cm) as shown in~\fig{d_zero}.
+\begin{figure}[!htbp]
+  \centering \subfloat[]
+  {\includegraphics[width=0.4\textwidth]{cap1/d_zero_a.jpg}} \subfloat[]
+  {\includegraphics[width=0.4\textwidth]{cap1/d_zero_bb.jpg}}
+  \caption{\textit{(a) The barrel/disk design of the D0 silicon tracker and (b)
+      the cross-sectional view of a barrel at the location of its active
+      bulkhead~\cite{Bean}.}}\label{d_zero}
+\end{figure}
+With such configuration vertices for high $\eta$ particles were reconstructed in
+three dimensions by the disks while vertices of particles at small $\eta$ were
+determined by the barrels. The barrels and the F-disks are based on 50 and
+62.5~$\mu$m pitch silicon microstrip detectors, while the H-disks are based on
+80~$\mu$m pitch, providing a spatial resolution of approximately 10~$\mu$m. A
+small angle stereo detectors provided the pattern recognition necessary to
+resolve tracks from $b$-decays within jets.  The overall design was chosen to
+allow for a three-dimensional track reconstruction with z-vertex and transverse
+impact parameter
+resolutions of better than 30~$\mu$m.\\
+
+At this stage the detectors become so large that the electronics, cables, and
+cooling cannot be kept outside the active volume but are an integral part of the
+detector modules. The paradigm shift from vertex detector to inner tracking
+detector is continuing in the \gls{lhc} detectors \gls{atlas} and
+\gls{cms}\footnote{The \gls{atlas}
+  and \gls{cms} experiments are located at \gls{cern}.}.\\
+\gls{lhc}\footnote{The \gls{lhc} (\fig{lhc_figure}) is the world's largest and
+  most powerful particle accelerator. It first started up on 10 September 2008,
+  and remains the latest addition to CERN's accelerator complex. The LHC
+  consists of a 27-kilometre ring of superconducting magnets with a number of
+  accelerating structures to boost the energy of the particles along the way.}
+is a proton-proton collider coming into operation in 2007 at \gls{cern} with
+14~TeV center of mass energy and design luminosity of
+10$^{34}$~cm$^{-2}$s$^{-1}$.
+\begin{figure}[!htbp]
+  \centering \subfloat[] {\includegraphics[width=0.5\textwidth]{cap1/lhc_a.jpg}}
+  \subfloat[] {\includegraphics[width=0.5\textwidth]{cap1/lhc_b.jpg}}
+  \caption{\textit{a) Cern was home to the LHC, the world's largest and most
+      powerful particle collider, the largest and most complex experimental
+      facility ever built, and the largest single machine in the world. b) Seven
+      detectors have been constructed at the LHC, located underground in large
+      caverns excavated at the LHC's intersection points. Two of them, the ATLAS
+      experiment and the CMS, are large, general purpose particle
+      detectors~\cite{Cernlab_a}.}}
+  \label{lhc_figure}
+\end{figure}
+Bunches of up to 10$^{11}$ protons crossing are 25~ns apart (corresponding to 40
+million collisions per second) and at design luminosity there will be on average
+23 interactions per crossing.  The \gls{lhc} will also collide heavy ions, in
+particular lead nuclei, at 5.5~TeV per nucleon pair, at a design luminosity of
+10$^{27}$~cm$^{-2}$s$^{-1}$.
+
+\hskip 1cm The \gls{atlas} detector is one of the two general purpose
+spectrometers constructed for the operation at the \gls{lhc}. The main design
+criteria for the detector included~\cite{Turala}:
+\begin{itemize}
+\item very good calorimetry for electrons and photons, complemented by
+  full-coverage hadronic calorimetry;
+\item high precision muon momentum resolution;
+\item efficient tracking for highest p$_T$ lepton momentum measurements,
+  electron and photon identification, $\tau$ lepton and heavy-flavour
+  identification, and full event reconstruction.
+\end{itemize}
+As shown in \fig{atlas_a} the \gls{atlas} apparatus consists of several large
+components: superconducting magnets, \gls{id}, calorimeters, muon chambers.
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{cap1/atlas_a.jpg}
+  \caption{\textit{Cut-away view of the ATLAS detector. The dimensions of the
+      detector are 25~m in height and 44~m in length. The overall weight of the
+      detector is approximately 7000~T~\cite{ATLASatCERN}.}}\label{atlas_a}
+\end{figure}
+The \gls{id} is immersed in a 2~T solenoidal field and is designed to provide
+hermetic and robust pattern recognition, excellent momentum resolution and both
+primary and secondary vertex measurements for charged tracks above a given p$_T$
+threshold and within the
+pseudorapidity range $|\eta| < 2.5$.\\
+Measurements are achieved with a combination of discrete, high-resolution
+semiconductor pixel and strip detectors in the inner part of the tracking
+volume, and straw-tube tracking detectors with the capability to generate and
+detect transition radiation in its outer part.  The \gls{id}, contained within a
+cylindrical envelope of length $\pm$~3512~mm and of radius 1150~mm, consists of
+three independent but complementary sub-detectors (\fig{atlas_b}):
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{cap1/atlas_b.jpg}
+  \caption{\textit{Structure of the ID. A track traverses successively the
+      beryllium beam-pipe, the three cylindrical silicon-pixel layers, the four
+      cylindrical double layers of barrel SCT and approximately 36 axial straws
+      tubes.~\cite{ATLASatCERN}.}}\label{atlas_b}
+\end{figure}
+\begin{itemize}
+\item at inner radii, high-resolution pattern recognition capabilities are
+  available using discrete space-points from silicon pixel layers and stereo
+  pairs of silicon microstrip (called \gls{sct}) layers;
+\item at larger radii, the \gls{trt} comprises many layers of gaseous straw tube
+  elements interleaved with transition radiation material. With an average of 36
+  hits per track, it provides continuous tracking to enhance the pattern
+  recognition and improve the momentum resolution over $|\eta|<2.0$ and electron
+  identification complementary to that of the calorimeter over a wide range of
+  energies.
+\end{itemize}
+The pixel detector is designed to provide a very high-granularity,
+high-precision set of measurements as close to the interaction point as
+possible. The system provides three of the precision measurements over the full
+acceptance, and determines the impact parameter resolution and the ability of
+the \gls{id} to find short-lived particles. The two-dimensional segmentation of
+the sensors gives space points without any of the ambiguities associated with
+projective geometries, but requires the use of advanced electronic techniques
+and interconnections for the readout. The system offers 140 million detector
+elements, each 50~$\mu$m in the r-$\phi$ direction and 300~$\mu$m in
+z~\cite{ATLAS:1997}. It consists of three barrels at average radii of $\sim$~4,
+11 and 14~cm and four disks on each side,
+between radii of 11 and 20~cm, which complete the angular coverage.\\
+The \gls{sct} system is designed to provide four precision measurements per
+track in the intermediate radial range, contributing to the measurement of
+momentum, impact parameter and vertex position, as well as providing good
+pattern recognition by the use of high granularity. The system is an order of
+magnitude larger in surface area than previous generations of silicon microstrip
+detectors, and in addition must face radiation levels which will alter the
+fundamental characteristics of the silicon wafers themselves.  The \gls{sct}
+consists of four nested barrels, and two end-caps, each with nine disks. The
+barrel cylinders have radii 300-514~mm (average silicon detector position) and
+an active length of 1530~mm; the end-cap disks have inner/outer radii ranging
+from 259 to 560~mm.  The barrel uses four layers of silicon microstrip detectors
+to provide precision points in the r-$\phi$ and z coordinates, using small angle
+stereo to obtain the z measurement. Each silicon detector is
+$6.36 \times 6.40$~cm$^2$ with 768 readout strips each with 80~$\mu $m
+pitch. The detector contains 61~m$^2$ of silicon detectors, with 6.2 million
+readout channels. The spatial resolution is 16~$\mu $m in r-$\phi$ and
+580~$\mu $m in z and tracks can be distinguished if separated by more than
+$\sim 200~\mu $m~\cite{ATLAS:1997}.
+
+\hskip 1cm At the beginning of year 2000, the \gls{cms} collaboration decided to
+build a full silicon tracker. The detector has been designed to precisely
+measure the various signals of new physics at the \gls{lhc}~\cite{Perries}:
+\begin{itemize}
+\item good muon identification and momentum resolution over a wide range of
+  momenta in the region $|\eta|<2.5$ and the ability to determine unambiguously
+  the charge of muons with $p < 1$~Tev/c;
+\item good charged particle momentum resolution and reconstruction efficiency in
+  the inner tracker. Efficient triggering and offline tagging of $\tau$'s and
+  $b-$jets, requiring pixel detectors close to the interaction region;
+\item good electromagnetic resolution and correct localization of the primary
+  interaction vertex;
+\item good E$^{miss}_T$ and dijet mass resolution.
+\end {itemize}
+The overall layout of \gls{cms} is shown in \fig{cms_a}.
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{cap1/cms_a.jpg}
+  \caption{\textit{An exploded view of the CMS
+      detector.~\cite{CMS_tech}.}}\label{cms_a}
+\end{figure}
+At the heart of \gls{cms} sits a 13-m-long, 5.9 m inner diameter, 4 T
+superconducting solenoid. In order to achieve good momentum resolution within a
+compact spectrometer without making stringent demands on muon-chamber resolution
+and alignment, a high magnetic field was chosen.  The \gls{cms} \gls{cts} region
+based on silicon devices:
+\begin{itemize}
+\item closest to the interaction vertex where the particle flux is the highest
+  pixel detectors are placed. The size of a pixel is
+  $\approx 100 \times 150~\mu$m$^2$;
+\item in the intermediate region (20 < r < 55~cm), the particle flux is low
+  enough to enable use of \gls{sst} with a minimum cell size of 10~cm $\times$
+  80~$\mu$m;
+\item in the outermost region (r > 55~cm) of the inner tracker, the particle
+  flux has dropped sufficiently to allow use of larger-pitch silicon microstrips
+  with a maximum cell size of 25~cm $\times$ 180~$\mu$m.
+\end{itemize}
+The pixel detector consists of 3 barrel layers with 2 endcap disks on each side
+on them to provide r-$\phi$ hermeticity (\fig{cms_b}). The three barrel layers
+are located at mean radii of 4.4, 7.3 and 10.2~cm, and have a length of
+53~cm. The two end disks, extending from 6 to 15~cm in radius, are placed on
+each side at |z| = 34.5~cm and 46.5~cm.
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{cap1/cms_b.jpg}
+  \caption{\textit{Layout of pixel detectors in the CMS
+      tracker~\cite{CMS_tech}.}}\label{cms_b}
+\end{figure}
+In order to achieve the optimal vertex position resolution, a design with an
+``almost'' square pixel shape in both the (r,$\phi$) and the z coordinates has
+been adopted. The barrel comprises 768 pixel modules arranged into half-ladders
+of 4 identical modules each.  The large Lorentz effect\footnote{The silicon
+  sensors of the \gls{cms} tracker are operating in a 3.8~T magnetic
+  field. Thus, charges created by traversing ionizing particles inside the
+  active sensor volume are affected by the Lorentz force, which leads to a
+  deflection of the drifting charge that may decrease the detector performance,
+  if it is not taken into account during track reconstruction. This deflection
+  angle is called Lorentz angle. It is strongly dependent on the drift mobility,
+  which relies on the electric field and may depend on the radiation
+  damage~\cite{Nuernberg}.} (Lorentz angle is $\ang{23}$) improves the r-$\phi$
+resolution through charge sharing. The spatial resolution is measured to be
+about 10~$\mu$m for the r-$\phi$
+measurement and about 20~$\mu$m for the z measurement.\\
+The \gls{sst} is composed of a central barrel and two end-cap regions; it
+extends about 5.6~m along the z-axis covering the pseudorapidity region
+$|\eta| \leq 2.5$. \fig{cms_c} shows the \gls{sst} layout.
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{cap1/cms_c.jpg}
+  \caption{\textit{Longitudinal view of the SST~\cite{My}.}}\label{cms_c}
+\end{figure}
+It consists of about 70~m$^2$ of active area of silicon: the barrel volume
+extends from -86.5 to 86.5~cm along the z-axis and from 21 to 63.5~cm along the
+radial direction. Five coaxial cylindrical layers and three mini end-cap disks
+allow to determine 3D hit positions, measuring the z and r-$\phi$
+coordinates. The basic elements of the \gls{sst} are silicon microstrip detector
+modules. The cylindrical layers contain 1372 single-sided modules, each composed
+of two detectors, and 1364 double-sided modules (four detectors each). The
+cylindrical layers are then instrumented with 8200 silicon detectors,
+corresponding to more than 2 million analog readout channels. The modules are
+tilted by $\ang{9}$ in order to compensate for the Lorentz angle and overlap in
+the z direction by 0.6~mm. Each mini end-cap disk is made of two overlapping
+concentrical rings; each ring accommodates 36 double-sided modules. This implies
+for the mini end-cap a total of 864 detectors and more than half a million
+readout channels. The large number of sensors and read-out channels is justified
+by physics expectations and requirements coming from experimental
+constraints. It implies, in fact, to a high granularity, which allows to keep
+the ``cell occupancy''\footnote{Cell occupancy is defined as the number of cells
+  with a signal above a certain threshold.} at the per cent level, a high hit
+efficiency, with a resolution of 20~$\mu$m in the r-$\phi$ plane and 500~$\mu$m
+along the z-axis and a resolution of 200~$\mu$m in the
+track separation.\\
+
+Given the size of these detectors, the accumulated material in the inner
+detector reaches the order of a full radiation length. That these detector
+systems exhibit satisfactory performance with that much material in the active
+volume is only possible because of the increased energy of the particles. One
+can spot a new paradigm for inner trackers:
+\begin{enumerate}
+\item cover a large area with many layers;
+\item detector modules including \glspl{asic} and services inside the tracking
+  volume;
+\item module size limited by electronic noise due to fast shaping time of
+  electronics.
+\end{enumerate}
+
+The development of the silicon strip detectors follows a version of Moore's
+law\footnote{Moore's law states that the number of transistors in a dense
+  integrated circuits doubles approximately every two years.}, which implies
+exponential growth as a function of time. Figs.~(\ref{moore}~a),~b)~) shows
+respectively that the detector area and the number of electronics channels
+follow a sort of Moore's law.
+\begin{figure}[!htbp]
+  \centering \subfloat[]
+  {\includegraphics[width=0.4\textwidth]{cap1/moore_a.jpg}} \subfloat[]
+  {\includegraphics[width=0.42\textwidth]{cap1/moore_b.jpg}}
+  \caption{\textit{(a) Area and (b) number of electronics channel of silicon
+      detectors in experiments as a function of time. The exponential grows with
+      time are an expression of Moore's law~\cite{Sadrozinski}.}}\label{moore}
+\end{figure}
+In \fig{moore_c} one can observe a clear difference between ground and
+space-based application. The space-based detectors are overcoming the limited
+resources by employing a fairly large detector, either with very long readout
+channels or coarse pitch, and fewer electronics channels.
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{cap1/moore_c.jpg}
+  \caption{\textit{Area of silicon detectors versus number of electronics
+      channels. The space-based experiments (full squares) exhibit much lower
+      channel count than their ground-based counterparts, indicating that power
+      consumption is a severe limitation of space
+      sciences~\cite{Sadrozinski}.}}\label{moore_c}
+\end{figure}
+
+
+
+
+
+\section{Si detectors in space}
+\label{sec:si_spazio}
+
+Instrumentation for particle and high-energy photon measurements in space must
+provide high levels of performance while meeting the severe constraints imposed
+by flight. Direct measurements are required spanning over thirteen decades in
+energy and covering species ranging from photons to the heaviest nuclei in the
+periodic table. Indirect measurements increase the energy range by another five
+decades.  Instruments to measure high-energy photons, X-rays, $\gamma$-rays and
+energetic particles are key tools in modern astronomy and
+astrophysics. High-energy photons are produced by a wide variety of processes in
+which particles, particularly electrons, are accelerated to relativistic
+velocities, or in which material is elevated to extreme temperatures. The
+particle acceleration processes that produce high-energy photons are also likely
+sources of highly energetic particles. Detected at velocities approaching the
+speed of light, these particles, known as cosmic rays, include atomic nuclei and
+electrons, as well as positrons and antiprotons. The instrumentation required
+varies greatly depending on the energy and species to be observed (from X-rays
+of $\sim 100$~eV to particles near the upper
+limit of the cosmic-ray spectrum at about $10^{15}$~eV).\\
+Designers of space instrumentation face a number of special challenges. Whether
+for balloons, sounding rockets, or satellites, instruments must conform to
+strict weight, dimension, and power limits. Size is a particular issue. Larger,
+heavier instruments cost more to build and test. For space-based instruments,
+higher weight also demands more powerful launch vehicles with accompanying,
+often
+dramatic, increases in cost.\\
+Power is usually supplied by photovoltaic arrays that have limited area,
+supplemented by batteries whose weight has to be considered. Heat generated by
+the electronics of flight instruments must be dissipated by radiation to space
+because the atmosphere is too thin to support convective cooling. At the same
+time, instruments must contend with the heat load of exposure to unobstructed
+sunlight. Instruments must be reliable and largely autonomous while
+incorporating the versatility to allow reconfiguration on command to change
+operational modes or compensate for degradation. Space-based instruments must
+contend with the rigors of the launch environment
+including shock, vibration, and acoustic loads.\\
+
+\subsection{Si detector in space and track reconstruction}
+\label{sec:tracking_spazio}
+
+% Double sided silicon detectors have been also applied in space experiments
+% where double sided silicon detector are well suited to the purpose of
+% providing two coordinates per detector and an optimal
+% spatial resolution keeping multiple scattering at a minimum level.\\
+
+For energies below a few hundred MeV/nucleon, one of the most common techniques
+used for the identifcation of cosmic rays is the simultaneous measurement of
+specifc ionization energy loss, dE/dx, and total kinetic energy, E. This
+technique is capable of determining the charge, mass and energy of incident
+particles. In fact the quantity
+\begin{equation}
+  \left( \frac{dE}{dx} \right)\left( E \right) \approx \left( \frac{Z^2}{v^2} \right)\left( \frac{1}{2}mv^2 \right)= \frac{1}{2}mZ^2 
+\end{equation}
+is unique for each completely ionized nuclei and cosmic particles.
+
+\hskip 1cm The modern dE/dx-E telescope based on silicon detector was introduced
+on the IMP-8 satellite, launched in 1973. IMP-8, a drum-shaped spacecraft of
+135.6~cm diameter and 157.4~cm high, was instrumented for interplanetary,
+magnetotail, and magnetospheric boundary studies of cosmic rays, energetic solar
+particles, plasma, and electric and magnetic fields. The spacecraft had a launch
+mass of 410~kg and a nominal power of 150~W. Among the instruments installed
+on the satellite, \gls{epe}, \gls{cpme} and \gls{che} were focused on cosmic rays detection.\\
+The \gls{che} (also referred to as \gls{crne}), devoted to the study of solar
+flare isotopes was an example of dE/dx vs E telescope. The instrument consisted
+of a pair of solid-state telescopes. The main telescope measures nuclei in the
+energy range of 10 to 100's of MeV/n, and electrons in the range of about 2 to
+about 25 MeV. The second telescope measures protons and alpha particles in the
+0.5-1.8 MeV/n range.
+
+The general layout of the telescope is shown in \fig{imp_satellite}.
+\begin{figure}
+  \centering \subfloat[\emph{}\label{imp_c}]
+  {\includegraphics[width=0.3\textwidth]{cap1/imp_satellite.jpg}}
+  \subfloat[\emph{}\label{imp_a}]
+  {\includegraphics[width=0.3\textwidth]{cap1/imp_a.jpg}} \\
+  \caption{\textit{(a) Photo of the IMP-8 spacecraft and (b) cross section of
+      the IMP-8 telescope. The silicon detectors D1, D2, D3 measure the particle
+      energy loss~\cite{Spurio}.}}\label{imp_satellite}
+\end{figure}
+It consisted of three lithium-drifted silicon detectors (D1, D2, D3) of
+thickness 750, 1450 and 800~$\mu$m plus an 11.5~g$\cdot$cm$^{-2}$ thick CsI(Tl)
+scintillator (D4) viewed by four photodiodes, a sapphire scitillator/Cerenkov
+radiator (D5) of thickess 3.98~g$\cdot$cm$^{-2}$ and a plastic scintillation
+guard counter (D6) viewed by a photomultiplier
+tube.\\
+Particles passing through the detector layers D1, D2, D3, and which have come to
+rest in D4 are considered. Counters D5 and D6 act as veto, to confirm that the
+particle is stopped in D4. The separation between different chemical species and
+isotopes is achieved using the dE/dx technique (measured in D1, D2) as a
+function of the total energy released in D4. \fig{imp_b} shows how events due to
+different isotope are located along distinct lines that are approximately
+equilateral hyperbolae.
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap1/imp_b.jpg}
+  \caption{\textit{Result from IMP-8, data collected between 1974 and 1975. On
+      the y-axis, the signal is proportional to the energy loss $ (Z/v)^2$
+      measured in (D1 + D2), on the x-axis, to the residual energy of the
+      particle measured in D4. At a given energy, the value on the y-axis
+      increases as $Z^2$. For a given Z and energy, nuclei with larger A have
+      smaller $\beta$ and undergo larger energy losses in
+      D4~\cite{Spurio}.}}\label{imp_b}
+\end{figure}
+Nuclei with different Z are well separated by their energy loss, which depends
+on $(Z/v)^2$ of the particle. At a given total energy, proportional to the
+signal D4, of a nucleus with a given Z, the
+velocity $v = \beta c$ is smaller for the isotope with a larger A.\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+As an example, some specific challenges that had to be faced in the
+\gls{glast}\footnote{The Gamma-ray Large Area Telescope is a space mission to
+  explore the gamma-ray universe. The telescope has been designed for high
+  sensitivity, high precision gamma-ray detection in space and it contains more
+  than $80$~m$^{2}$ of single-sided AC-coupled silicon detectors.} experiment
+were~\cite{Sadrozinski_c}:
+\begin{itemize}
+\item the launch on a Delta II rocket with accelerations of $\sim 10$~g requires
+  mechanical design solutions not needed in accelerator based
+  research. Vibration and acoustic shocks have to be included in the
+  designs. Potential failure modes include breakage of detectors, wire bonds and
+  destruction of the trays;
+\item the down-load bandwidth of the instrument limits the average transmitted
+  data rate to about $30$~Hz, while the expected trigger rate from charged
+  cosmic rays is about $5$~kHz: the data reduction is performed in successful
+  triggers;
+\item the electrical power of a satellite mission is limited. The instrument has
+  a power budget of $650$~W, of which less than half is available for the
+  readout electronics, allowing less than $250$~mW for each of the 1 million
+  channels;
+\item the remoteness and forbidding nature of space poses additional
+  experimental complications. A challenging problem arises from the mismatch of
+  the \gls{cte} in the electronics: silicon detectors, lead converter and the
+  structural materials have different \gls{cte}, which leads to very large
+  forces in large temperature excursions, which might be unavoidable during
+  flight;
+\item the radiation levels in space are a strong function of the orbit and in
+  this case are extremely low by \gls{lhc} standards because the low-earth orbit
+  of GLAST ($\sim 550$~km) is below the radiation belts\footnote{A radiation
+    belt is a layer of energetic charged particles that is held in place around
+    a magnetized planet, such as the Earth, by the planet's magnetic field. The
+    Earth has two such belts and sometimes others may be temporarily
+    created. The discovery of the belts is credited to James Van Allen and as a
+    result the Earth's belts bear his name.}. Though the GLAST orbit traverses
+  the South Atlantic Anomaly (SAA), a region of trapped protons and electrons of
+  fairly low momenta, during which the trigger rate is so high that the
+  experiment is shut down.
+\end{itemize}
+
+
+
+
+
+%%% Local Variables:
+%%% TeX-Master: "../thesis"
+%%% End:

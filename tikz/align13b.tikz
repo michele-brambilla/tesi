@@ -1,0 +1,37 @@
+\begin{tikzpicture}[scale=.4,every node/.style={minimum size=1cm},on grid,every
+  text node part/.style={align=center}, declare function={ track(\x) =
+    1.+3.0/7.5*\x; trackb(\x) = 1.9+.4/1.5*(\x-2.25); }]
+  
+  \def \a {.0}
+  \def \c {-.8}
+
+  % aligned
+  \begin{scope}
+    % axis
+     \draw[->] (-1,-1) -- (11,-1) node[right] {z};
+    \draw[->] (0,-2) -- (0,7) node[above] {x};
+
+    % angle & track
+    \shade[left color=white,right color=red!50!white ] (3.5,{track(3.5)}) --
+    ({3.5+2},{track(3.5)}) arc (0:21.8:2)  -- cycle;
+    \draw[red] (3.5,{track(3.5)}) -- (6.5,{track(3.5)})  node[below left] {$\alpha'$};
+    \draw[red,domain=-.5:10,variable=\x] plot ({\x}, {track(\x)} );
+
+    % m1
+    \draw[dashed] (2.25,-1) -- (2.25,1) node[below=1] {$z_1$};
+    \draw[dashed] (2.25,{track(2.25)} ) --  (0,{track(2.25)}) node[left] {$x_1$};
+    \fill[blue] (2,{track(2)}) rectangle (2.5,{track(2.5)});
+    \draw[thick] (2,1) rectangle (2.5,5)  node[above] {$M_1$};
+        
+    % m3
+    \draw[dashed] (8,{track(8.25)} ) -- (0,{track(8.25)}) node[left] {$x_3'$};    
+    \draw[dashed] (8.25,-1) -- (8.25,1) node[below=1] {$z_3$};
+
+    \fill[red!30!white]  (8,{track(8) +\c}) rectangle (8.5,{track(8.5) +\c});
+    \draw[thick,dotted,red] (8,{1 +\c})          rectangle (8.5,{5 +\c});
+
+    \fill[blue]  (8,{track(8)}) rectangle (8.5,{track(8.5)});
+    \draw[thick] (8,1)          rectangle (8.5,5)  node[above] {$M_3$};
+  \end{scope}
+  
+\end{tikzpicture}

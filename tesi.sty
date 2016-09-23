@@ -1,0 +1,52 @@
+\pagestyle{fancy}
+
+%% Scherzo..
+%% \renewcommand{\chaptermark}[1]{%
+%% \markboth{\chaptername 
+%% \ \thechapter\ $\star$ \ #1}{}}
+%% 
+%% \renewcommand{\sectionmark}[1]{
+%% \markright{\thesection.$\heartsuit$.\ #1}} 
+
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{\chaptername 
+\ \thechapter. \ #1}{}}
+
+\renewcommand{\sectionmark}[1]{
+\markright{\thesection.\ #1}} 
+
+
+%\setlength{\textwidth}{17truecm}         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setlength{\textheight}{24truecm}	  %                             %
+\setlength{\evensidemargin}{1cm}	  % cambia bordi zona scrittura %
+\setlength{\oddsidemargin}{1cm}           %                             % 
+\addtolength{\hoffset}{.45cm}             %                             % 
+\addtolength{\voffset}{-1truecm}	  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%% Elimino il contenuto dell'head e del foot
+\fancyhead{}
+\fancyfoot{}
+
+
+%% In basso metto i numeri di pagina sull'esterno,
+%% in alto, sulla pagina sx il titolo della tesi
+%% e sulla dx il titolo del capitolo/paragrafo/subpar
+\fancyhead[CE]{\bfseries\rightmark}
+\fancyhead[CO]{\bfseries\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+
+%% Serve per il package fncychap
+\setlength{\headheight}{15pt}
+
+%% Per mettere il logo dell'universita' al centro
+%% del frontespizio
+\newcommand\AlCentroPagina[1]{%
+\AddToShipoutPicture*{\AtPageCenter{% 
+\makebox(0,0){\includegraphics%
+[width=0.9\paperwidth]{#1}}}}}
+
+%% Linea spessa
+\newcommand{\HRule}{\rule{\linewidth}{0.7mm}}

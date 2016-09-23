@@ -1,0 +1,116 @@
+ \documentclass[a4paper,12pt,openright,tikz]{book}
+ \author{Greta Bassani}
+
+ \usepackage{hyperref} 
+
+ \usepackage{braket} 
+ \usepackage{graphicx} 
+% \usepackage[draft]{graphicx} 
+
+ \usepackage[english]{babel}
+ \usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[pdftex]{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{subfig}
+\usepackage{siunitx}
+\usepackage{standalone}
+
+\usepackage[acronym,nonumberlist]{glossaries}
+%\makenoidxglossaries
+\loadglsentries{acronyms/acronym.tex}
+\makeglossaries
+\usepackage[toc,page]{appendix}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix,backgrounds}
+\usetikzlibrary{patterns}
+\usepackage{tikzscale}
+
+%\usepackage[Conny]{fncychap}
+\usepackage{./tesi}
+
+\usepackage{xcolor}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+
+% ~ per la tilde
+
+%begin{figure}[!htbp]
+% \centering
+% \includegraphics[width=0.3\textwidth]{cap4/Ge.png}\\
+% \caption{\textit{GE Senographe Essential situato presso l'Ospedale S.~Anna
+% di Como.}}\label{Ge}
+%end{figure}
+
+%
+% Mo/30~$\mu$m
+ 
+\setlength\parindent{0pt}
+
+\hyphenation{par-ti-cu-lar-ly}
+\hyphenation{wheth-er}
+\hyphenation{sili-con}
+\newcommand{\mbc}[1]{{\color{blue}#1}}
+\newcommand{\eq}[1]{Eq.~(\ref{#1})}
+\newcommand{\fig}[1]{Fig.~\ref{#1}}
+\newcommand{\tab}[1]{Tab.~(\ref{#1})}
+
+
+
+\begin{document}
+
+%\input{frontespizio/frontespizio}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+%\input{introduzione/la_mia_pagina}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\pagenumbering{roman}
+
+\tableofcontents
+%\input{introduzione/incipit}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+ \pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+%\input{cap1/silicon_detectors}
+%\input{cap1/si_detectors_space}
+
+%\input{cap2/semiconductor}
+%\input{cap3/experiment}
+\setcounter{chapter}{2}
+\input{cap4/data_analysis}
+\input{cap4/calorimetro}
+\input{cap4/risoluzione}
+\input{cap4/bnct}
+%\input{cap5/results}
+
+%\begin{appendices}
+%\input{appendix/multitrack}
+%\end{appendices}
+%\input{Tracking/Tracking_SSC_LHC_Sadrozinsky}
+
+%\addcontentsline{toc}{chapter}{List of figures}
+%\addcontentsline{toc}{chapter}{List of tables}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{unsrt}
+\bibliography{biblio/biblio_gre}
+
+%\printnoidxglossaries
+%\printglossaries
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

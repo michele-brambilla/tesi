@@ -1,0 +1,53 @@
+\begin{tikzpicture}[scale=.4,every node/.style={minimum size=1cm},on grid,every
+  text node part/.style={align=center}, declare function={ track(\x) =
+    1.+3.0/7.5*\x; trackb(\x) = 1.9+.4/1.5*(\x-2.25); }]
+  
+  \def \a {2.5}
+  \def \b {8}
+
+  \begin{scope}
+
+    \def \y {6}
+    \draw (0,\y) -- (10,\y) node[right] {$M_1$};
+    \def \x {2.9}
+    \draw[blue,very thick,|-|] ({\x-.5},\y) -- ({\x+.5},\y);
+    \node[fill,star,star points=10,scale=0.2] (x11) at (\x,\y) {} node[above left] at
+    (x11) {\footnotesize $x_1^{(1)}$};
+    \def \x {5.7}
+    \draw[blue,very thick,|-|] ({\x-.5},\y) -- ({\x+.5},\y);
+    \node[fill,star,star points=10,scale=0.2] (x12) at (\x,\y) {} node[above right] at
+    (x12) {\footnotesize $x_1^{(2)}$};
+    
+    % M2
+    \def \y {3}
+    \draw (0,\y) -- (10,\y) node[right] {$M_2$};
+    \def \x {3.3}
+    \draw[blue,very thick,|-|] ({\x-.5},\y) -- ({\x+.5},\y);
+    \node[fill,star,star points=10,scale=0.2] (x21) at (\x,\y) {} node[above left] at
+    (x21) {\footnotesize $x_2^{(1)}$};
+    \def \x {4.7}
+    \draw[blue,very thick,|-|] ({\x-.5},\y) -- ({\x+.5},\y);
+    \node[fill,star,star points=10,scale=0.2] (x22) at (\x,\y) {} node[above right] at
+    (x22) {\footnotesize $x_2^{(2)}$};
+    
+
+    \def \y {0}
+    \draw (0,\y) -- (10,\y) node[right] {$M_3$};
+    \def \x {3.5}
+    \draw[blue,very thick,|-|] ({\x-.5},\y) -- ({\x+.5},\y);
+    \node[fill,star,star points=10,scale=0.2] (x31) at (\x,\y) {} node[above left] at
+    (x31) {\footnotesize $x_3^{(1)}$};
+    \def \x {5.3}
+    \draw[blue,very thick,|-|] ({\x-.5},\y) -- ({\x+.5},\y);
+    \node[fill,star,star points=10,scale=0.2] (x22) at (\x,\y) {} node[above right] at
+    (x22) {\footnotesize $x_2^{(2)}$};
+
+    %tracks
+    \draw[green] (2.9,6) -- (3.5,0); % 112
+    \draw[green] (5.3,6) -- (4.9,0);
+
+  \end{scope}
+
+
+
+\end{tikzpicture}
