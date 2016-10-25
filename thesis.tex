@@ -17,6 +17,9 @@
 \usepackage{subfig}
 \usepackage{siunitx}
 \usepackage{standalone}
+\usepackage{multirow}
+
+
 
 \usepackage[acronym,nonumberlist]{glossaries}
 %\makenoidxglossaries
@@ -60,8 +63,9 @@
 \newcommand{\eq}[1]{Eq.~(\ref{#1})}
 \newcommand{\fig}[1]{Fig.~\ref{#1}}
 \newcommand{\tab}[1]{Tab.~(\ref{#1})}
+\newcommand{\sect}[1]{Sec.~(\ref{#1})}
 
-
+\newcommand*{\myalign}[2]{\multicolumn{1}{#1}{#2}}
 
 \begin{document}
 
@@ -85,12 +89,12 @@
 %\input{cap1/si_detectors_space}
 
 %\input{cap2/semiconductor}
-%\input{cap3/experiment}
 \setcounter{chapter}{2}
-\input{cap4/data_analysis}
-\input{cap4/calorimetro}
-\input{cap4/risoluzione}
-\input{cap4/bnct}
+\input{cap3/experiment}
+%\input{cap4/data_analysis}
+%\input{cap4/calorimetro}
+%\input{cap4/risoluzione}
+%\input{cap4/bnct}
 %\input{cap5/results}
 
 %\begin{appendices}
